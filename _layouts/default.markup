@@ -26,10 +26,10 @@
    <div id="header">
         <div id="header-navigation">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/how-to-run-it.html">How to run it</a></li>
-                <li><a href="/how-to-use-it.html">How to use it</a></li>
-                <li><a href="/screenshots.html">Screeshots</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="how-to-run-it.html">How to run it</a></li>
+                <li><a href="how-to-use-it.html">How to use it</a></li>
+                <li><a href="screenshots.html">Screeshots</a></li>
             </ul>
         </div>
     </div>
