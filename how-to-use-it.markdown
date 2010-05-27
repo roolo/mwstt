@@ -2,7 +2,8 @@
 layout: default
 ---
 <h3>Description</h3>
-pplication parts*
+__Application parts__
+
 Entire application is divided into 3 modules.
 
 __Projects__
