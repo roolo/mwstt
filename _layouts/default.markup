@@ -6,35 +6,33 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title>roolo/MailosWebSimpleTimeTracker @ GitHub</title>	
-	<style type="text/css">
-		body {
-    color:black;
-  		margin-top: 1.0em;
-		  font-family: "Helvetica,Arial,FreeSans";
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; margin-bottom: 3px; color:black;}
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none; color:black;}
-		h2 { font-size: 1.5em; }
-    h3 { text-align: center;} 
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
-	
+<link rel="stylesheet" type="text/css" media="screen"  href="/css/main.css" /> 	
 </head>
 
 <body>
   <a href="http://github.com/roolo/MailosWebSimpleTimeTracker"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
   <div id="container">
+     <div class="download">
+      <a href="http://github.com/roolo/MailosWebSimpleTimeTracker/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/roolo/MailosWebSimpleTimeTracker/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
 
+    <h1><a href="http://github.com/roolo/MailosWebSimpleTimeTracker">MailosWebSimpleTimeTracker</a>
+      <span class="small">by <a href="http://github.com/roolo">roolo</a></span></h1>
+
+   <div id="header">
+        <div id="header-navigation">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/how-to-run-it.html">How to run it</a></li>
+                <li><a href="/how-to-use-it.html">How to use it</a></li>
+                <li><a href="/screenshots.html">Screeshots</a></li>
+            </ul>
+        </div>
+    </div>
 {{content}}
   </div>
 
