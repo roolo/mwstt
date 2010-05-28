@@ -1,5 +1,6 @@
 ---
 layout: default
+title: How to run it
 ---
 <h3>Description</h3>
 *WEBrick*

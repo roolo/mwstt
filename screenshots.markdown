@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Screenshots
 ---
 <h3>Description</h3>
 <img src="images/screenshots/projects-index.png" />

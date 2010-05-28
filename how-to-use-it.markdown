@@ -1,5 +1,6 @@
 ---
 layout: default
+title: How to use it
 ---
 <h3>Description</h3>
 __Application parts__
