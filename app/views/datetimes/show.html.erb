@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Start:</b>
+  <%= @datetime.start %>
+</p>
+
+<p>
+  <b>Stop:</b>
+  <%= @datetime.stop %>
+</p>
+
+
+<%= link_to 'Edit', edit_datetime_path(@datetime) %> |
+<%= link_to 'Back', datetimes_path %>

@@ -1,0 +1,25 @@
+<h1>Listing datetimes</h1>
+<%= render 'start_stop_form' %>
+<table>
+  <tr>
+    <th>Start</th>
+    <th>Stop</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @datetimes.each do |datetime| %>
+  <tr>
+    <td><%= datetime.start %></td>
+    <td><%= datetime.stop %></td>
+    <td><%= link_to 'Show', datetime %></td>
+    <td><%= link_to 'Edit', edit_datetime_path(datetime) %></td>
+    <td><%= link_to 'Destroy', datetime, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Datetime', new_datetime_path %>

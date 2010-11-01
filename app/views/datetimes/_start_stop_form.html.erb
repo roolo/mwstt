@@ -1,0 +1,5 @@
+<%= Datetime.count(:conditions => "stop IS NULL") %>
+
+<%= form_tag :action => @start_stop_action do %>
+	<button type="submit" name="<%= @start_stop_action %>"><%= @start_stop_action.capitalize %></button>
+<% end %>
