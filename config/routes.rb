@@ -1,4 +1,6 @@
 MwsttFs::Application.routes.draw do
+  resources :activities
+
   match 'datetimes/start' => 'datetimes#start'
   match 'datetimes/stop' => 'datetimes#stop'
   resources :datetimes

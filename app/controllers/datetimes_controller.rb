@@ -8,7 +8,14 @@ class DatetimesController < ApplicationController
   def index
     @datetimes = Datetime.all
     @start_stop_action = self.get_start_stop_action
-
+    
+    opened_datetime = Datetime.get_opened_one
+    if opened_datetime.nil?
+      @activity_name = ''
+    else
+      @activity_name = Activity.find(opened_datetime.activities_id).name
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @datetimes }
@@ -96,9 +103,10 @@ class DatetimesController < ApplicationController
   end
   
   def start
-    newDatetime = Datetime.getNewDatetime
+    newDatetime = Datetime.getNewDatetime params[:activity_name]
     
-    redirect_to(:action => "index", :notice => 'New datetime created')
+    redirect_to(:action => "index")
+    
   end
   
   def stop

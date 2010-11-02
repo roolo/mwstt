@@ -2,6 +2,7 @@
 <%= render 'start_stop_form' %>
 <table>
   <tr>
+    <th>Acitivity</th>
     <th>Start</th>
     <th>Stop</th>
     <th></th>
@@ -11,6 +12,13 @@
 
 <% @datetimes.each do |datetime| %>
   <tr>
+	<td>
+  		<% if datetime.activities_id.nil? %>
+			&nbsp;
+		<% else %>
+  			<%= Activity.find(datetime.activities_id).name %>
+		<% end %>
+	</td>
     <td><%= datetime.start %></td>
     <td><%= datetime.stop %></td>
     <td><%= link_to 'Show', datetime %></td>
