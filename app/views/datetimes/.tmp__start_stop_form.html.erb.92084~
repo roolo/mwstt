@@ -1,3 +1,0 @@
-<%= form_tag :action => 'start' do %>
-	<button type="submit" name="<%= @start_stop_action %>"><%= @start_stop_action.capitalize %></button>
-<% end %>
