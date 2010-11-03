@@ -16,7 +16,7 @@
   		<% if datetime.activities_id.nil? %>
 			&nbsp;
 		<% else %>
-  			<%= Activity.find(datetime.activities_id).name %>
+  			<%= link_to Activity.find(datetime.activities_id).name, Activity.find(datetime.activities_id)  %>
 		<% end %>
 	</td>
     <td><%= datetime.start %></td>
