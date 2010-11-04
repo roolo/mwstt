@@ -1,5 +1,40 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
+cs:
+  # General
+  Actions:  Actions
+  Edit:  Edit
+  Destroy:  Destroy
+  Show:  Show
+  Back:  Back
+
+  # Activities
+  New Activity: New Activity
+  Listing activities: Listing activities
+  
+  #Datetimes
+  New Datetime: New Datetime
+  Listing datetimes: Listing datetime
+
+  # Projects
+  Description:  Description
+  Name:  Name
+  New Project:  New Project
+  Listing projects: Listing projects
+  Project:  Project
+  
+  # Today
+  Activity tracking: "Activity tracking"
+  Today:  Today
+  Today started activities: "Today started activities"
+  Tracked activity: "Tracked activity"
+  
+  
+  # Today, Datetime
+  Activity:  Activity
+  From:  From
+  To:  To
+  
+  
+  

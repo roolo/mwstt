@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Start:</b>
+  <b><%= t('Start') %>:</b>
   <%= @datetime.start %>
 </p>
 
 <p>
-  <b>Stop:</b>
+  <b><%= t('Stop') %>:</b>
   <%= @datetime.stop %>
 </p>
 
 
-<%= link_to 'Edit', edit_datetime_path(@datetime) %> |
-<%= link_to 'Back', datetimes_path %>
+<%= link_to t('Edit'), edit_datetime_path(@datetime) %> |
+<%= link_to t('Back'), datetimes_path %>

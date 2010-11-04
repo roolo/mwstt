@@ -1,0 +1,37 @@
+cs:
+  # General
+  Actions:  Akce
+  Edit:  Editovat
+  Destroy:  Zničit
+  Show:  Zobrazit
+  Back:  Zpět
+
+  # Activities
+  New Activity: Nová aktivita
+  Listing activities: Přehled aktivit
+  
+  #Datetimes
+  New Datetime: Nový čas
+  Listing datetimes: Přehled časů
+
+  # Projects
+  Description:  Popis
+  Name:  Název
+  New Project:  Nový projekt
+  Listing projects: Přehled projektů
+  Project:  Projekt
+  
+  # Today
+  Activity tracking: "Sledování aktivity"
+  Today:  Dnes
+  Today started activities: "Dnes započaté aktivity"
+  Tracked activity: "Sledovaná aktivita"
+  
+  
+  # Today, Datetime
+  Activity:  Aktivita
+  From:  Od
+  To:  Do
+  
+  
+  

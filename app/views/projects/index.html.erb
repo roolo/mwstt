@@ -1,13 +1,11 @@
-<h1>Listing projects</h1>
+<h1><%= t('Listing projects') %></h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Project</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><%= t('Name') %></th>
+    <th><%= t('Description') %></th>
+    <th><%= t('Project') %></th>
+    <th colspan="3"><%= t('Actions') %></th>
   </tr>
 
 <% @projects.each do |project| %>
@@ -15,13 +13,13 @@
     <td><%= project.name %></td>
     <td><%= project.description %></td>
     <td><%= project.project %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t('Show'), project %></td>
+    <td><%= link_to t('Edit'), edit_project_path(project) %></td>
+    <td><%= link_to t('Destroy'), project, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to t('New Project'), new_project_path %>
