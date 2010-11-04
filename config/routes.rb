@@ -1,4 +1,7 @@
 MwsttFs::Application.routes.draw do
+  match 'today/start' => 'today#start'
+  match 'today/stop' => 'today#stop'
+  
   resources :projects
 
   resources :activities

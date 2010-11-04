@@ -1,34 +1,13 @@
 class DatetimesController < ApplicationController
-  DATETIME_START_ACTION_CODE = 'start'
-  DATETIME_STOP_ACTION_CODE  = 'stop'
-  
-  
   # GET /datetimes
   # GET /datetimes.xml
   def index
     @datetimes = Datetime.all
-    @start_stop_action = self.get_start_stop_action
-    
-    opened_datetime = Datetime.get_opened_one
-    if opened_datetime.nil?
-      @activity_name = ''
-    else
-      @activity_name = Activity.find(opened_datetime.activities_id).name
-    end
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @datetimes }
     end
-  end
-  
-  def get_start_stop_action
-    if Datetime.count(:conditions => "stop IS NULL") > 0
-      return DATETIME_STOP_ACTION_CODE
-    else
-      return DATETIME_START_ACTION_CODE
-    end
-    
   end
   
   # GET /datetimes/1
@@ -100,23 +79,5 @@ class DatetimesController < ApplicationController
       format.html { redirect_to(datetimes_url) }
       format.xml  { head :ok }
     end
-  end
-  
-  def start
-    newDatetime = Datetime.getNewDatetime params[:activity_name]
-    
-    redirect_to(:action => "index")
-    
-  end
-  
-  def stop
-    stopableDatetimes = Datetime.find_all_by_stop nil
-    
-    stopableDatetimes.each do |datetime|
-      datetime.stop = DateTime.now
-      datetime.save
-    end
-    
-    redirect_to(:action => "index")
   end
 end

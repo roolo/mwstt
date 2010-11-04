@@ -1,0 +1,11 @@
+<%= form_tag :action => @start_stop_action do %>
+	<%= field_set_tag 'Activity tracking' do %>
+		<button type="submit" name="<%= @start_stop_action %>"><%= @start_stop_action.capitalize %></button>
+		<strong>Tracked activity:</strong>
+		<% if @start_stop_action == 'start' %>
+			<%= text_field_tag :activity_name %>
+		<% else %>
+			<%= @activity_spent %> - <%= @activity_name %>
+		<% end %>
+	<% end %>
+<% end %>

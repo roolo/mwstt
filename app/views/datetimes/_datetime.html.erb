@@ -1,0 +1,31 @@
+<tr>
+	<td>
+	    <% if datetime.activities_id.nil? %>
+	    	&nbsp;
+		<% else %>
+	    	<%= link_to Activity.find(datetime.activities_id).name, Activity.find(datetime.activities_id) %>
+	    <% end %>
+	</td>
+<td>
+	<% if datetime.start.today? %>
+	    <%= datetime.start.to_formatted_s :time %>
+	<% else %>
+	    <%= datetime.start%>
+	<% end %>
+</td>
+<td>
+	<% if(datetime.stop.nil?) %>
+		&nbsp;
+	<% else%>
+    	<% if datetime.stop.today? %>
+	    	<%= datetime.stop.to_formatted_s :time %>
+		<% else %>
+		    <%= datetime.stop%>
+		<% end %>
+	<% end%>
+</td>
+
+<td><%= link_to 'Show', datetime %></td>
+<td><%= link_to 'Edit', edit_datetime_path(datetime) %></td>
+<td><%= link_to 'Destroy', datetime, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>

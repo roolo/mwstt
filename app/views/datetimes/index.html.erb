@@ -1,5 +1,4 @@
 <h1>Listing datetimes</h1>
-<%= render 'start_stop_form' %>
 <table>
   <tr>
     <th>Acitivity</th>
@@ -11,20 +10,7 @@
   </tr>
 
 <% @datetimes.each do |datetime| %>
-  <tr>
-	<td>
-  		<% if datetime.activities_id.nil? %>
-			&nbsp;
-		<% else %>
-  			<%= link_to Activity.find(datetime.activities_id).name, Activity.find(datetime.activities_id)  %>
-		<% end %>
-	</td>
-    <td><%= datetime.start %></td>
-    <td><%= datetime.stop %></td>
-    <td><%= link_to 'Show', datetime %></td>
-    <td><%= link_to 'Edit', edit_datetime_path(datetime) %></td>
-    <td><%= link_to 'Destroy', datetime, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <%= render datetime %>
 <% end %>
 </table>
 
