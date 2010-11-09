@@ -218,10 +218,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-Starts new datetime for such acitivity.
-</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -242,10 +239,7 @@ Starts new datetime for such acitivity.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-Stops any not stopped datetime.
-</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -430,32 +424,21 @@ Stops any not stopped datetime.
   
 
   
-</p><div class="docstring">
-  <div class="discussion">
-    <p>
-Starts new datetime for such acitivity
-</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-</div><table class="source_code">
+</p><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
+42
 43
 44
 45
 46
-47
-48</pre>
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 42</span>
 
 <span class='def def kw'>def</span> <span class='start identifier id'>start</span>
   <span class='newDatetime identifier id'>newDatetime</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='getNewDatetime identifier id'>getNewDatetime</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:activity_name</span><span class='rbrack token'>]</span>
@@ -476,23 +459,14 @@ Starts new datetime for such acitivity
   
 
   
-</p><div class="docstring">
-  <div class="discussion">
-    <p>
-Stops any not stopped datetime. Usualy only one datetime is opened
-</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-</div><table class="source_code">
+</p><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
+49
+50
 51
 52
 53
@@ -500,12 +474,10 @@ Stops any not stopped datetime. Usualy only one datetime is opened
 55
 56
 57
-58
-59
-60</pre>
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 49</span>
 
 <span class='def def kw'>def</span> <span class='stop identifier id'>stop</span>
   <span class='stopableDatetimes identifier id'>stopableDatetimes</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='find_all_by_stop identifier id'>find_all_by_stop</span> <span class='nil nil kw'>nil</span>
@@ -528,7 +500,7 @@ Stops any not stopped datetime. Usualy only one datetime is opened
 </div>
     
     <div id="footer">
-  Generated on Tue Nov  9 19:28:58 2010 by 
+  Generated on Tue Nov  9 22:07:27 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>

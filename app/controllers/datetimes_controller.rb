@@ -1,6 +1,7 @@
+# Handles datetimes maintenace
 class DatetimesController < ApplicationController
-  # GET /datetimes
-  # GET /datetimes.xml
+  
+  # Serves listing of existing datetimes
   def index
     @datetimes = Datetime.all
 
@@ -10,8 +11,7 @@ class DatetimesController < ApplicationController
     end
   end
   
-  # GET /datetimes/1
-  # GET /datetimes/1.xml
+  # Serves details about particular datetime
   def show
     @datetime = Datetime.find(params[:id])
 
@@ -21,8 +21,7 @@ class DatetimesController < ApplicationController
     end
   end
   
-  # GET /datetimes/new
-  # GET /datetimes/new.xml
+  # Serves creation of new datetime
   def new
     @datetime = Datetime.new
 
@@ -31,14 +30,13 @@ class DatetimesController < ApplicationController
       format.xml  { render :xml => @datetime }
     end
   end
-
-  # GET /datetimes/1/edit
+  
+  # Serves editation of particular datetime
   def edit
     @datetime = Datetime.find(params[:id])
   end
 
-  # POST /datetimes
-  # POST /datetimes.xml
+  # Handles creation of datetime
   def create
     @datetime = Datetime.new(params[:datetime])
 
@@ -52,9 +50,8 @@ class DatetimesController < ApplicationController
       end
     end
   end
-
-  # PUT /datetimes/1
-  # PUT /datetimes/1.xml
+  
+  # Handles modification of datetime
   def update
     @datetime = Datetime.find(params[:id])
 
@@ -69,8 +66,7 @@ class DatetimesController < ApplicationController
     end
   end
 
-  # DELETE /datetimes/1
-  # DELETE /datetimes/1.xml
+  # Handles destroing of datetime
   def destroy
     @datetime = Datetime.find(params[:id])
     @datetime.destroy

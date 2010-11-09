@@ -83,7 +83,18 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+Handles datetimes maintenace
+</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
 
   
   
@@ -116,7 +127,7 @@
 
   
     <span class="summary_desc"><div class='inline'><p>
-POST /datetimes POST /datetimes.xml.
+Handles creation of datetime.
 </p>
 </div></span>
   
@@ -140,7 +151,7 @@ POST /datetimes POST /datetimes.xml.
 
   
     <span class="summary_desc"><div class='inline'><p>
-DELETE /datetimes/1 DELETE /datetimes/1.xml.
+Handles destroing of datetime.
 </p>
 </div></span>
   
@@ -164,7 +175,7 @@ DELETE /datetimes/1 DELETE /datetimes/1.xml.
 
   
     <span class="summary_desc"><div class='inline'><p>
-GET /datetimes/1/edit.
+Serves editation of particular datetime.
 </p>
 </div></span>
   
@@ -188,7 +199,7 @@ GET /datetimes/1/edit.
 
   
     <span class="summary_desc"><div class='inline'><p>
-GET /datetimes GET /datetimes.xml.
+Serves listing of existing datetimes.
 </p>
 </div></span>
   
@@ -212,7 +223,7 @@ GET /datetimes GET /datetimes.xml.
 
   
     <span class="summary_desc"><div class='inline'><p>
-GET /datetimes/new GET /datetimes/new.xml.
+Serves creation of new datetime.
 </p>
 </div></span>
   
@@ -236,7 +247,7 @@ GET /datetimes/new GET /datetimes/new.xml.
 
   
     <span class="summary_desc"><div class='inline'><p>
-GET /datetimes/1 GET /datetimes/1.xml.
+Serves details about particular datetime.
 </p>
 </div></span>
   
@@ -260,7 +271,7 @@ GET /datetimes/1 GET /datetimes/1.xml.
 
   
     <span class="summary_desc"><div class='inline'><p>
-PUT /datetimes/1 PUT /datetimes/1.xml.
+Handles modification of datetime.
 </p>
 </div></span>
   
@@ -292,7 +303,7 @@ PUT /datetimes/1 PUT /datetimes/1.xml.
 </p><div class="docstring">
   <div class="discussion">
     <p>
-POST /datetimes POST /datetimes.xml
+Handles creation of datetime
 </p>
 
 
@@ -306,6 +317,8 @@ POST /datetimes POST /datetimes.xml
       <pre class="lines">
 
 
+40
+41
 42
 43
 44
@@ -316,12 +329,10 @@ POST /datetimes POST /datetimes.xml
 49
 50
 51
-52
-53
-54</pre>
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 40</span>
 
 <span class='def def kw'>def</span> <span class='create identifier id'>create</span>
   <span class='@datetime ivar id'>@datetime</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:datetime</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
@@ -352,7 +363,7 @@ POST /datetimes POST /datetimes.xml
 </p><div class="docstring">
   <div class="discussion">
     <p>
-DELETE /datetimes/1 DELETE /datetimes/1.xml
+Handles destroing of datetime
 </p>
 
 
@@ -366,18 +377,18 @@ DELETE /datetimes/1 DELETE /datetimes/1.xml
       <pre class="lines">
 
 
+70
+71
+72
+73
 74
 75
 76
 77
-78
-79
-80
-81
-82</pre>
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 70</span>
 
 <span class='def def kw'>def</span> <span class='destroy identifier id'>destroy</span>
   <span class='@datetime ivar id'>@datetime</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
@@ -404,7 +415,7 @@ DELETE /datetimes/1 DELETE /datetimes/1.xml
 </p><div class="docstring">
   <div class="discussion">
     <p>
-GET /datetimes/1/edit
+Serves editation of particular datetime
 </p>
 
 
@@ -418,12 +429,12 @@ GET /datetimes/1/edit
       <pre class="lines">
 
 
+35
 36
-37
-38</pre>
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 35</span>
 
 <span class='def def kw'>def</span> <span class='edit identifier id'>edit</span>
   <span class='@datetime ivar id'>@datetime</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
@@ -444,7 +455,7 @@ GET /datetimes/1/edit
 </p><div class="docstring">
   <div class="discussion">
     <p>
-GET /datetimes GET /datetimes.xml
+Serves listing of existing datetimes
 </p>
 
 
@@ -458,17 +469,17 @@ GET /datetimes GET /datetimes.xml
       <pre class="lines">
 
 
-4
 5
 6
 7
 8
 9
 10
-11</pre>
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 5</span>
 
 <span class='def def kw'>def</span> <span class='index identifier id'>index</span>
   <span class='@datetimes ivar id'>@datetimes</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='all identifier id'>all</span>
@@ -494,7 +505,7 @@ GET /datetimes GET /datetimes.xml
 </p><div class="docstring">
   <div class="discussion">
     <p>
-GET /datetimes/new GET /datetimes/new.xml
+Serves creation of new datetime
 </p>
 
 
@@ -508,17 +519,17 @@ GET /datetimes/new GET /datetimes/new.xml
       <pre class="lines">
 
 
+25
 26
 27
 28
 29
 30
 31
-32
-33</pre>
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 25</span>
 
 <span class='def def kw'>def</span> <span class='new identifier id'>new</span>
   <span class='@datetime ivar id'>@datetime</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
@@ -544,7 +555,7 @@ GET /datetimes/new GET /datetimes/new.xml
 </p><div class="docstring">
   <div class="discussion">
     <p>
-GET /datetimes/1 GET /datetimes/1.xml
+Serves details about particular datetime
 </p>
 
 
@@ -594,7 +605,7 @@ GET /datetimes/1 GET /datetimes/1.xml
 </p><div class="docstring">
   <div class="discussion">
     <p>
-PUT /datetimes/1 PUT /datetimes/1.xml
+Handles modification of datetime
 </p>
 
 
@@ -608,6 +619,9 @@ PUT /datetimes/1 PUT /datetimes/1.xml
       <pre class="lines">
 
 
+55
+56
+57
 58
 59
 60
@@ -617,13 +631,10 @@ PUT /datetimes/1 PUT /datetimes/1.xml
 64
 65
 66
-67
-68
-69
-70</pre>
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/datetimes_controller.rb', line 55</span>
 
 <span class='def def kw'>def</span> <span class='update identifier id'>update</span>
   <span class='@datetime ivar id'>@datetime</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
@@ -649,7 +660,7 @@ PUT /datetimes/1 PUT /datetimes/1.xml
 </div>
     
     <div id="footer">
-  Generated on Tue Nov  9 19:28:58 2010 by 
+  Generated on Tue Nov  9 22:07:27 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>
