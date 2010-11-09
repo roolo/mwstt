@@ -83,7 +83,18 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+Handles starting and stoping of work, lists todays past work
+</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
   <h2>Constant Summary</h2>
   
     <dl class="constants">
@@ -121,7 +132,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_activity_spent_time-instance_method" title="#get_activity_spent_time (instance method)">- (Object) <strong>get_activity_spent_time</strong> </a>
+      <a href="#get_activity_spent_time-instance_method" title="#get_activity_spent_time (instance method)">- (String) <strong>get_activity_spent_time</strong> </a>
     
 
     
@@ -134,7 +145,10 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns amount of hours and minutes spent on current acitivty.
+</p>
+</div></span>
   
 </li>
 
@@ -142,7 +156,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_start_stop_action-instance_method" title="#get_start_stop_action (instance method)">- (Object) <strong>get_start_stop_action</strong> </a>
+      <a href="#get_start_stop_action-instance_method" title="#get_start_stop_action (instance method)">- (String) <strong>get_start_stop_action</strong> </a>
     
 
     
@@ -155,7 +169,11 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns code of action which should be performed by clicking on start/stop
+button.
+</p>
+</div></span>
   
 </li>
 
@@ -176,7 +194,10 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Handles starting and stoping of work, lists todays past work.
+</p>
+</div></span>
   
 </li>
 
@@ -197,7 +218,10 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Prepare data for start/stop form.
+</p>
+</div></span>
   
 </li>
 
@@ -218,7 +242,10 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Starts tracking time on activity with name given as request parameter.
+</p>
+</div></span>
   
 </li>
 
@@ -239,7 +266,10 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Stops tracking time on opened datetime.
+</p>
+</div></span>
   
 </li>
 
@@ -262,24 +292,54 @@
       <div class="method_details first">
   <p class="signature first" id="get_activity_spent_time-instance_method">
   
-    - (<tt>Object</tt>) <strong>get_activity_spent_time</strong> 
+    - (<tt>String</tt>) <strong>get_activity_spent_time</strong> 
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns amount of hours and minutes spent on current acitivty
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Amount of hours and minutes spent on current acitivty
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-28
-29
-30
-31
-32</pre>
+35
+36
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 35</span>
 
 <span class='def def kw'>def</span> <span class='get_activity_spent_time identifier id'>get_activity_spent_time</span>
   <span class='datetime_start identifier id'>datetime_start</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='get_opened_one identifier id'>get_opened_one</span><span class='dot token'>.</span><span class='start identifier id'>start</span>
@@ -295,26 +355,51 @@
       <div class="method_details ">
   <p class="signature " id="get_start_stop_action-instance_method">
   
-    - (<tt>Object</tt>) <strong>get_start_stop_action</strong> 
+    - (<tt>String</tt>) <strong>get_start_stop_action</strong> 
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns code of action which should be performed by clicking on start/stop
+button
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-34
-35
-36
-37
-38
-39
-40</pre>
+44
+45
+46
+47
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 44</span>
 
 <span class='def def kw'>def</span> <span class='get_start_stop_action identifier id'>get_start_stop_action</span>
   <span class='if if kw'>if</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='count identifier id'>count</span><span class='lparen token'>(</span><span class='symbol val'>:conditions</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;stop IS NULL&quot;</span><span class='rparen token'>)</span> <span class='gt op'>&gt;</span> <span class='integer val'>0</span>
@@ -336,19 +421,30 @@
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Handles starting and stoping of work, lists todays past work
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-5
-6
-7
-8</pre>
+8
+9
+10
+11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 8</span>
 
 <span class='def def kw'>def</span> <span class='index identifier id'>index</span>
   <span class='@datetimes ivar id'>@datetimes</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='where identifier id'>where</span> <span class='lbrack token'>[</span><span class='string val'>&quot;DATE(start) = DATE(?)&quot;</span><span class='comma token'>,</span> <span class='Time constant id'>Time</span><span class='dot token'>.</span><span class='now identifier id'>now</span><span class='rbrack token'>]</span>
@@ -367,16 +463,23 @@
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Prepare data for start/stop form
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-10
-11
-12
-13
 14
 15
 16
@@ -389,10 +492,14 @@
 23
 24
 25
-26</pre>
+26
+27
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 14</span>
 
 <span class='def def kw'>def</span> <span class='prepare_tracking_data identifier id'>prepare_tracking_data</span>
   <span class='@start_stop_action ivar id'>@start_stop_action</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='get_start_stop_action identifier id'>get_start_stop_action</span>
@@ -424,21 +531,32 @@
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Starts tracking time on activity with name given as request parameter
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-42
-43
-44
-45
-46
-47</pre>
+53
+54
+55
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 53</span>
 
 <span class='def def kw'>def</span> <span class='start identifier id'>start</span>
   <span class='newDatetime identifier id'>newDatetime</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='getNewDatetime identifier id'>getNewDatetime</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:activity_name</span><span class='rbrack token'>]</span>
@@ -459,25 +577,36 @@
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Stops tracking time on opened datetime
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58</pre>
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/today_controller.rb', line 61</span>
 
 <span class='def def kw'>def</span> <span class='stop identifier id'>stop</span>
   <span class='stopableDatetimes identifier id'>stopableDatetimes</span> <span class='assign token'>=</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='find_all_by_stop identifier id'>find_all_by_stop</span> <span class='nil nil kw'>nil</span>
@@ -500,7 +629,7 @@
 </div>
     
     <div id="footer">
-  Generated on Tue Nov  9 22:25:09 2010 by 
+  Generated on Tue Nov  9 22:54:52 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>
