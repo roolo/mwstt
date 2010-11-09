@@ -1,6 +1,7 @@
+# Handles activities maintenace
 class ActivitiesController < ApplicationController
-  # GET /activities
-  # GET /activities.xml
+  
+  # Serves listing of existing activities
   def index
     @activities = Activity.all
 
@@ -10,8 +11,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # GET /activities/1
-  # GET /activities/1.xml
+  # Serves details about particular activity
   def show
     @activity = Activity.find(params[:id])
 
@@ -21,8 +21,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # GET /activities/new
-  # GET /activities/new.xml
+  # Serves creation of new activity
   def new
     @activity = Activity.new
 
@@ -32,13 +31,12 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # GET /activities/1/edit
+  # Serves editation of particular activity
   def edit
     @activity = Activity.find(params[:id])
   end
 
-  # POST /activities
-  # POST /activities.xml
+  # Handles creation of activity
   def create
     @activity = Activity.new(params[:activity])
 
@@ -53,8 +51,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # PUT /activities/1
-  # PUT /activities/1.xml
+  # Handles modification of activity
   def update
     @activity = Activity.find(params[:id])
 
@@ -69,8 +66,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # DELETE /activities/1
-  # DELETE /activities/1.xml
+  # Handles destroing of activity
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
