@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf8" />
+<title>Class: Datetime</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo; 
+    
+    
+    <span class="title">Datetime</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Datetime
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">Datetime</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/models/datetime.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_opened_one-class_method" title="get_opened_one (class method)">+ (Object) <strong>get_opened_one</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getNewDatetime-class_method" title="getNewDatetime (class method)">+ (Datetime) <strong>getNewDatetime</strong>(activity_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Creates new record( Datetime ) linked to such Activity given by
+activity_name parameter.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="get_opened_one-class_method">
+  
+    + (<tt>Object</tt>) <strong>get_opened_one</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/datetime.rb', line 21</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='get_opened_one identifier id'>get_opened_one</span>
+  <span class='return return kw'>return</span> <span class='Datetime constant id'>Datetime</span><span class='dot token'>.</span><span class='find_by_stop identifier id'>find_by_stop</span> <span class='nil nil kw'>nil</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="getNewDatetime-class_method">
+  
+    + (<tt><span class='object_link'><a href="" title="Datetime (class)">Datetime</a></span></tt>) <strong>getNewDatetime</strong>(activity_name) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Creates new record( Datetime ) linked to such Activity given by
+activity_name parameter
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>activity_name</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Name of activity for which should be started datetime
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Datetime (class)">Datetime</a></span></tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/datetime.rb', line 9</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='getNewDatetime identifier id'>getNewDatetime</span> <span class='activity_name identifier id'>activity_name</span>
+  <span class='joined_activity identifier id'>joined_activity</span> <span class='assign token'>=</span> <span class='Activity constant id'>Activity</span><span class='dot token'>.</span><span class='find_or_create_by_name identifier id'>find_or_create_by_name</span> <span class='activity_name identifier id'>activity_name</span>
+  
+  <span class='new_datetime identifier id'>new_datetime</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+  <span class='new_datetime identifier id'>new_datetime</span><span class='dot token'>.</span><span class='activities_id identifier id'>activities_id</span> <span class='assign token'>=</span> <span class='joined_activity identifier id'>joined_activity</span><span class='dot token'>.</span><span class='id identifier id'>id</span>
+  <span class='new_datetime identifier id'>new_datetime</span><span class='dot token'>.</span><span class='start identifier id'>start</span> <span class='assign token'>=</span> <span class='DateTime constant id'>DateTime</span><span class='dot token'>.</span><span class='now identifier id'>now</span>
+  <span class='new_datetime identifier id'>new_datetime</span><span class='dot token'>.</span><span class='stop identifier id'>stop</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span>
+  <span class='new_datetime identifier id'>new_datetime</span><span class='dot token'>.</span><span class='save identifier id'>save</span>
+  
+  <span class='return return kw'>return</span> <span class='new_datetime identifier id'>new_datetime</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue Nov  9 19:28:58 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.1 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
