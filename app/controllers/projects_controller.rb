@@ -1,6 +1,7 @@
+# Handles projects maintenace
 class ProjectsController < ApplicationController
-  # GET /projects
-  # GET /projects.xml
+  
+  # Serves listing of existing projects
   def index
     @projects = Project.all
 
@@ -10,8 +11,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1
-  # GET /projects/1.xml
+  # Serves details about particular project
   def show
     @project = Project.find(params[:id])
 
@@ -21,8 +21,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/new
-  # GET /projects/new.xml
+  # Serves creation of new project
   def new
     @project = Project.new
 
@@ -32,13 +31,12 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1/edit
+  # Serves editation of particular project
   def edit
     @project = Project.find(params[:id])
   end
 
-  # POST /projects
-  # POST /projects.xml
+  # Handles creation of project
   def create
     @project = Project.new(params[:project])
 
@@ -53,8 +51,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # PUT /projects/1
-  # PUT /projects/1.xml
+  # Handles modification of project
   def update
     @project = Project.find(params[:id])
 
@@ -69,8 +66,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # DELETE /projects/1
-  # DELETE /projects/1.xml
+  # Handles destroing of project
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
