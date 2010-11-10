@@ -50,7 +50,7 @@ class TodayController < ApplicationController
   
   # Starts tracking time on activity with name given as request parameter 
   def start
-    newDatetime = Datetime.getNewDatetime params[:activity_name]
+    newDatetime = Datetime.getNewDatetime params[:new_tracking_info]
     
     redirect_to(:action => "index")
     
