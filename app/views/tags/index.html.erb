@@ -1,0 +1,18 @@
+<h1><%= t('Listing Tags') %></h1>
+<table>
+	<thead>
+		<tr>
+			<th><%= t('Tag name') %></th>
+			<th colspan="2"><%= t('Actions') %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @tags.each do |t| %>
+		<tr>
+			<td><%= t[1] %></td>
+			<td><a href="/tags/show/<%= t[0] %>"><%= t('Show') %></a></td>
+			<td><a href="/tags/destroy/<%= t[0] %>"><%= t('Destroy') %></a></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

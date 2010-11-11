@@ -1,4 +1,9 @@
 MwsttFs::Application.routes.draw do
+  match "tags" => "tags#index"
+  match "tags/index" => "tags#index"
+  match "tags/show/:tag_id" => "tags#show"
+  match "tags/destroy/:tag_id" => "tags#destroy"
+
   match 'today/start' => 'today#start'
   match 'today/stop' => 'today#stop'
   

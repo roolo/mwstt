@@ -25,7 +25,9 @@
 	<% end%>
 </td>
 <td>
-	<%= datetime.tags.join ', ' %>
+	<% datetime.tags.each do |tag| %>
+		<a href="/tags/show/<%= tag.id %>"><%= tag.name %></a>
+	<% end %>
 </td>
 
 <td><%= link_to t('Show'), datetime %></td>
