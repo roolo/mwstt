@@ -1,17 +1,25 @@
 <h1><%= t('Today') %></h1>
 <%= render 'start_stop_form' %>
-<h2><%= t('Today started activities') %></h2>
-<table>
-	<thead>
-		<tr>
-			<th><%= t('Activity') %></th>
-			<th><%= t('From') %></th>
-			<th><%= t('To') %></th>
-			<th><%= t('Tags') %></th>
-			<th colspan="3"><%= t('Actions') %></th>
-		</tr>
-	</thead>
-	<tbody>
-	<%= render(@datetimes, :locals => {:datetime_format => @datetime_format}) %>
-	</tbody>
-</table>
+<div id="page-content">
+	<div id="tracking" class="page-part">
+		<h2><%= t('Today started activities') %></h2>
+		<button onclick="javascript:$('sidebar').toggle();$('tracking').toggleClassName('maximized');"><%= t('Toggle sidebar') %></button>
+		<table>
+			<thead>
+				<tr>
+					<th><%= t('Activity') %></th>
+					<th><%= t('From') %></th>
+					<th><%= t('To') %></th>
+					<th><%= t('Tags') %></th>
+					<th colspan="3"><%= t('Actions') %></th>
+				</tr>
+			</thead>
+			<tbody>
+			<%= render(@datetimes, :locals => {:datetime_format => @datetime_format}) %>
+			</tbody>
+		</table>
+	</div>
+	<div id="sidebar" class="page-part">
+		<%= render 'tag_cloud' %>
+	</div>
+</div>
