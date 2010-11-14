@@ -10,6 +10,11 @@
   <%= @datetime.stop %>
 </p>
 
+<p>
+  <b><%= t('Tags') %>:</b>
+  <%= @datetime.tags.join ', ' %>
+</p>
+
 
 <%= link_to t('Edit'), edit_datetime_path(@datetime) %> |
 <%= link_to t('Back'), datetimes_path %>

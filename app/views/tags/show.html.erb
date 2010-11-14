@@ -1,0 +1,17 @@
+<h1><%= t('Tag') %>: <%= @tag['name'] %></h1>
+<h2><%= t('Datetimes/Activities') %></h2>
+<table>
+	<thead>
+		<tr>
+			<th><%= t('Activity') %></th>
+			<th><%= t('Start') %></th>
+			<th><%= t('Stop') %></th>
+			<th><%= t('Tags') %></th>
+			<th colspan="3"><%= t('Akce') %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render @datetimes %>
+	</tbody>
+</table>
+<%= link_to t('Tags listing'), tags_path %>

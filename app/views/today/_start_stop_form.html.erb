@@ -3,7 +3,8 @@
 		<button type="submit" name="<%= @start_stop_action %>"><%= @start_stop_action.capitalize %></button>
 		<strong><%= t('Tracked activity') %>:</strong>
 		<% if @start_stop_action == 'start' %>
-			<%= text_field_tag :activity_name %>
+			<%= text_field :new_tracking_info, :activity_name %>
+			<%= text_field :new_tracking_info, :datetime_params %>
 		<% else %>
 			<%= @activity_spent %> - <%= @activity_name %>
 		<% end %>

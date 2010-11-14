@@ -7,6 +7,13 @@ class TodayController < ApplicationController
   def index
     @datetimes = Datetime.where ["DATE(start) = DATE(?)", Time.now]
     self.prepare_tracking_data
+    
+    @tags = Datetime.tag_counts_on(:tags)
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @datetimes }
+    end
   end
   
   # Prepare data for start/stop form
@@ -20,11 +27,6 @@ class TodayController < ApplicationController
       @activity = Activity.find(opened_datetime.activities_id)
       @activity_name = @activity.name
       @activity_spent = self.get_activity_spent_time
-    end
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @datetimes }
     end
   end
   
@@ -50,7 +52,7 @@ class TodayController < ApplicationController
   
   # Starts tracking time on activity with name given as request parameter 
   def start
-    newDatetime = Datetime.getNewDatetime params[:activity_name]
+    newDatetime = Datetime.getNewDatetime params[:new_tracking_info]
     
     redirect_to(:action => "index")
     

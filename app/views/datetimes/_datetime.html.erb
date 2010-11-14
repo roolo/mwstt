@@ -24,6 +24,11 @@
 		<% end %>
 	<% end%>
 </td>
+<td>
+	<% datetime.tags.each do |tag| %>
+		<a href="/tags/show/<%= tag.id %>"><%= tag.name %></a>
+	<% end %>
+</td>
 
 <td><%= link_to t('Show'), datetime %></td>
 <td><%= link_to t('Edit'), edit_datetime_path(datetime) %></td>
