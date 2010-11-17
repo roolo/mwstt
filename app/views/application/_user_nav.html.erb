@@ -1,0 +1,11 @@
+<div id="user_nav">
+  <% if current_user.nil? %>
+    <%= link_to t("Register"), new_user_path %> |
+    <%= link_to t("Login"), login_path %>
+  <% else %>
+    <%= link_to current_user.username, :controller => 'account', :action=>'index' %> [
+    <%= link_to t("Edit Account"), :controller => 'account', :action=>'edit' %> |
+    <%= link_to t("Logout"), logout_path %>
+	]
+  <% end %>
+</div>

@@ -7,13 +7,22 @@ MwsttFs::Application.routes.draw do
   match 'today/start' => 'today#start'
   match 'today/stop' => 'today#stop'
   
-  resources :projects
-
   resources :activities
+  resources :projects
+  resources :users
+  resource :user_session
 
   match 'datetimes/start' => 'datetimes#start'
   match 'datetimes/stop' => 'datetimes#stop'
   resources :datetimes
+  
+  match "login", :controller => "user_sessions", :action => "new"
+  match "user_sessions" => "user_sessions#create"
+  match "logout", :controller => "user_sessions", :action => "destroy"
+  
+  match "account" => "account#index"
+  match "account/edit" => "account#edit"
+  match "account/update" => "account#update"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

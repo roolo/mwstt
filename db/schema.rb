@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101109222745) do
+ActiveRecord::Schema.define(:version => 20101114205933) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(:version => 20101109222745) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
