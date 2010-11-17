@@ -5,10 +5,10 @@ class TodayController < ApplicationController
   
   # Handles starting and stoping of work, lists todays past work
   def index
-    @datetimes = Datetime.where ["DATE(start) = DATE(?)", Time.now]
+    @datetimes = current_user.datetimes.where ["DATE(start) = DATE(?)", Time.now]
     self.prepare_tracking_data
     
-    @tags = Datetime.tag_counts_on(:tags)
+    @tags = current_user.datetimes.tag_counts_on(:tags)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +20,7 @@ class TodayController < ApplicationController
   def prepare_tracking_data
     @start_stop_action = self.get_start_stop_action
     
-    opened_datetime = Datetime.get_opened_one
+    opened_datetime = Datetime.get_opened_one current_user
     if opened_datetime.nil?
       @activity_name = ''
     else
@@ -33,8 +33,10 @@ class TodayController < ApplicationController
   # Returns amount of hours and minutes spent on current acitivty
   #
   # @return [String] Amount of hours and minutes spent on current acitivty
+  # 
+  # @todo Change the way for building spent time to more clean one
   def get_activity_spent_time
-    datetime_start = Datetime.get_opened_one.start
+    datetime_start = Datetime.get_opened_one(current_user).start
     activity_spent_seconds = Time.now - datetime_start
     return [ activity_spent_seconds.to_i / 3600, activity_spent_seconds.to_i / 60 % 60 ].map{ |t| t.to_s.rjust(2, '0') }.join(':')
   end
@@ -52,7 +54,7 @@ class TodayController < ApplicationController
   
   # Starts tracking time on activity with name given as request parameter 
   def start
-    newDatetime = Datetime.getNewDatetime params[:new_tracking_info]
+    newDatetime = Datetime.getNewDatetime params[:new_tracking_info], current_user
     
     redirect_to(:action => "index")
     
