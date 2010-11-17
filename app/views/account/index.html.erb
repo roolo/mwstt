@@ -9,4 +9,12 @@
   <th><%= t('Email') %>:</th>
   <td><%= @user.email %></td>
 </tr>
+<tr>
+    <th>
+        <%= t('Language') %>:
+    </th>
+    <td>
+    	<%= Locale.find(@user.locales_id).name %>
+    </td>
+</tr>
 </table>

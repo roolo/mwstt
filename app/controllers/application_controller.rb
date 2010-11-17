@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   helper_method :current_user
-  
+  before_filter :set_locale
   
   private
   def current_user_session
@@ -36,5 +36,12 @@ class ApplicationController < ActionController::Base
   def store_location
     session[:return_to] = request.request_uri
   end
+  
+  def set_locale
+  # if params[:locale] is nil then I18n.default_locale will be used
+  unless current_user.nil?
+    I18n.locale = Locale.find(current_user.locales_id).locale_code
+  end
+end
 
 end

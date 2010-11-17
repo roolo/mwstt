@@ -11,23 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<table class="form">
+  <tr class="field">
+    <th><%= f.label :username %></th>
+    <td><%= f.text_field :username %></td>
+  </tr>
+  <tr class="field">
+    <th><%= f.label :email %></th>
+    <td><%= f.text_field :email %></td>
+  </tr>
+  <tr>
+    <th>
+        <%= t('Language') %>:
+    </th>
+    <td>
+    	<%= collection_select :user, :locales_id, Locale.all(:order => "name ASC"), :id, :name %>
+    </td>
+</tr>
+  <tr class="field">
+    <th><%= f.label :password %></th>
+    <td><%= f.password_field :password %></td>
+  </tr>
+  <tr class="field">
+    <th><%= f.label :password_confirmation %></th>
+    <td><%= f.password_field :password_confirmation %></td>
+  </tr>
+  <tr class="actions">
+    <td colspan="2"><%= f.submit %></td>
+  </tr>
+</table>
 <% end %>

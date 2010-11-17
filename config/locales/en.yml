@@ -9,6 +9,16 @@ en:
   Show:  Show
   Back:  Back
 
+  Edit Account:  Edit Account
+  Logout:  Logout
+  
+  # Account
+  Editing account:  Editing account
+  Account was successfully updated:  Account was successfully updated
+  Username:  Username
+  Email:  Email
+  Language:  Language
+  
   # Activities
   New Activity: New Activity
   Listing activities: Listing activities

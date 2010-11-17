@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101117145456) do
+ActiveRecord::Schema.define(:version => 20101117212033) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(:version => 20101117145456) do
     t.datetime "updated_at"
     t.integer  "activities_id"
     t.integer  "user_id"
+  end
+
+  create_table "locales", :force => true do |t|
+    t.string "name"
+    t.string "locale_code"
   end
 
   create_table "projects", :force => true do |t|
@@ -61,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20101117145456) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "locales_id"
   end
 
 end

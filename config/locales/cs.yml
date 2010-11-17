@@ -5,6 +5,15 @@ cs:
   Destroy:  Zničit
   Show:  Zobrazit
   Back:  Zpět
+  Edit Account:  Editovat účet
+  Logout:  Odhlásit
+  
+  # Account
+  Editing account:  Editace účtu
+  Account was successfully updated:  Účet byl úspěšně upraven
+  Username:  Uživatelské jméno
+  Email:  Email
+  Language:  Jazyk
 
   # Activities
   New Activity: Nová aktivita

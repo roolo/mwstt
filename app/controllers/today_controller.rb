@@ -2,6 +2,8 @@
 class TodayController < ApplicationController
     DATETIME_START_ACTION_CODE = 'start'
     DATETIME_STOP_ACTION_CODE  = 'stop'
+    
+  before_filter :require_user
   
   # Handles starting and stoping of work, lists todays past work
   def index
