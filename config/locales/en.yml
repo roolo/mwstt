@@ -8,7 +8,6 @@ en:
   Destroy:  Destroy
   Show:  Show
   Back:  Back
-
   Edit Account:  Edit Account
   Logout:  Logout
   
@@ -27,6 +26,8 @@ en:
   #Datetimes
   New Datetime: New Datetime
   Listing datetimes: Listing datetime
+  Start:  Start
+  Stop:  Stop
 
   # Projects
   Description:  Description
@@ -34,18 +35,25 @@ en:
   New Project:  New Project
   Listing projects: Listing projects
   Project:  Project
+
+  # Tags
+  Tag:  Tag
+  Tags:  Tags
+  Datetimes/Activities:  Datetimes/Activities
   
   # Today
   Activity tracking: "Activity tracking"
   Today:  Today
   Today started activities: "Today started activities"
   Tracked activity: "Tracked activity"
+  Toggle sidebar: Toggle sidebar
   
   
   # Today, Datetime
   Activity:  Activity
   From:  From
   To:  To
+  
   
   
   

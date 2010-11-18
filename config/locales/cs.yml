@@ -23,6 +23,8 @@ cs:
   #Datetimes
   New Datetime: Nový čas
   Listing datetimes: Přehled časů
+  Start:  Start
+  Stop:  Stop
 
   # Projects
   Description:  Popis
@@ -31,11 +33,19 @@ cs:
   Listing projects: Přehled projektů
   Project:  Projekt
   
+  # Tags
+  Listing Tags:  Přehled značek
+  Tag:  Značka
+  Tags:  Značky
+  Datetimes/Activities:  Časy/Aktivity
+  Tags listing:  Přehled značek
+  
   # Today
   Activity tracking: "Sledování aktivity"
   Today:  Dnes
   Today started activities: "Dnes započaté aktivity"
   Tracked activity: "Sledovaná aktivita"
+  Toggle sidebar: Zap./Vyp. postranní panel
   
   
   # Today, Datetime
