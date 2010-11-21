@@ -10,17 +10,19 @@ MwsttFs::Application.routes.draw do
   resources :activities
   resources :projects
   resources :users
-  resource :user_session
+  match "user_sessions/new" => "user_sessions#new"
 
   match 'datetimes/start' => 'datetimes#start'
   match 'datetimes/stop' => 'datetimes#stop'
   resources :datetimes
   
-  match "login", :controller => "user_sessions", :action => "new"
+  match "login" => "user_sessions#new"
   match "user_sessions" => "user_sessions#create"
   match "logout", :controller => "user_sessions", :action => "destroy"
   
   match "account" => "account#index"
+  match "registration" => "account#new"
+  match "account/create" => "account#create"
   match "account/edit" => "account#edit"
   match "account/update" => "account#update"
 
