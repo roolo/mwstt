@@ -1,0 +1,24 @@
+<td>
+  <% if datetime.start.today? %>
+    <%= datetime.start.to_formatted_s :time %>
+  <% else %>
+    <%= datetime.start%>
+  <% end %>
+</td>
+<td>
+  <% if(datetime.stop.nil?) %>
+    &nbsp;
+  <% else%>
+    <% if datetime.stop.today? %>
+      <%= datetime.stop.to_formatted_s :time %>
+    <% else %>
+      <%= datetime.stop%>
+    <% end %>
+  <% end%>
+</td>
+<td><%= datetime.tags_from(current_user) %></td>
+<td><%= link_to t('Show'), datetime %></td>
+<td><%= link_to t('Edit'), edit_datetime_path(datetime) %></td>
+<td><%= link_to t('Destroy'), datetime, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
+<tr>

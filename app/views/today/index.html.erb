@@ -15,7 +15,12 @@
 				</tr>
 			</thead>
 			<tbody>
-			<%= render(@datetimes, :locals => {:datetime_format => @datetime_format}) %>
+                          <% @datetimes.each do |activity_name, datetimes| %>
+                          <tr>
+                            <td rowspan="<%= datetimes.count %>" class="activity-name"><%= activity_name %></td>
+                            <%= raw datetimes.collect { |datetime| render :partial => 'start_stop_cells', :locals => {:datetime => datetime} }.join %>
+                          </tr>
+                          <% end %>
 			</tbody>
 		</table>
 	</div>

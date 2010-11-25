@@ -7,7 +7,7 @@ class TodayController < ApplicationController
   
   # Handles starting and stoping of work, lists todays past work
   def index
-    @datetimes = current_user.datetimes.where ["DATE(start) = DATE(?)", Time.now]
+    @datetimes = current_user.datetimes.where( ["DATE(start) = DATE(?)", Time.now] ).to_set.classify { |datetime| Activity.find(datetime.activities_id).name }
     self.prepare_tracking_data
     
     @tags = current_user.datetimes.tag_counts_on(:tags)
