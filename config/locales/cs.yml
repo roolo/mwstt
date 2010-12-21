@@ -7,6 +7,8 @@ cs:
   Back:  Zpět
   Edit Account:  Editovat účet
   Logout:  Odhlásit
+  Register:  Register
+  Login:  Login
   
   # Account
   Account informations:  Informace o účtu
@@ -15,6 +17,7 @@ cs:
   Username:  Uživatelské jméno
   Email:  Email
   Language:  Jazyk
+  Registration: Registration
 
   # Activities
   New Activity: Nová aktivita

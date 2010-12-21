@@ -10,7 +10,9 @@ en:
   Back:  Back
   Edit Account:  Edit Account
   Logout:  Logout
-  
+  Register:  Register
+  Login:  Login
+
   # Account
   Account informations:  Account informations
   Editing account:  Editing account
@@ -18,7 +20,8 @@ en:
   Username:  Username
   Email:  Email
   Language:  Language
-  
+  Registration: Registration
+
   # Activities
   New Activity: New Activity
   Listing activities: Listing activities
