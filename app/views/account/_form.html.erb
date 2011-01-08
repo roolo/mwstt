@@ -27,7 +27,16 @@
     <td>
     	<%= collection_select :user, :locales_id, Locale.all(:order => "name ASC"), :id, :name %>
     </td>
-</tr>
+  </tr>
+  <tr>
+    <th>
+        <%= t('Icon set') %>:
+    </th>
+    <td>
+    	<%= f.radio_button(:icon_set, 'nuvola') %><%= f.label :icon_set_nuvola, 'Nuvola' %>
+    	<%= f.radio_button(:icon_set, 'famfam') %><%= f.label :icon_set_famfam, 'Famfam' %>
+    </td>
+  </tr>
   <tr class="field">
     <th><%= f.label :password %></th>
     <td><%= f.password_field :password %></td>

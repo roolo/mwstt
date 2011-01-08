@@ -14,7 +14,7 @@ cs:
   In CTT:  Je v CTT
   Yes, this is item is written to central time tracker:  Ano, tato položka je zapsána v centrálním time trackeru
   No, this is item is not yet written to central time tracker: Ne, tato položka ještě není zapsána v centrálním time trackeru
-  
+
   # Account
   Account informations:  Informace o účtu
   Editing account:  Editace účtu
@@ -23,11 +23,12 @@ cs:
   Email:  Email
   Language:  Jazyk
   Registration: Registration
+  Icon set:  Sada ikon
 
   # Activities
   New Activity: Nová aktivita
   Listing activities: Přehled aktivit
-  
+
   #Datetimes
   New Datetime: Nový čas
   Listing datetimes: Přehled časů
@@ -40,26 +41,25 @@ cs:
   New Project:  Nový projekt
   Listing projects: Přehled projektů
   Project:  Projekt
-  
+
   # Tags
   Listing Tags:  Přehled značek
   Tag:  Značka
   Tags:  Značky
   Datetimes/Activities:  Časy/Aktivity
   Tags listing:  Přehled značek
-  
+
   # Today
   Activity tracking: "Sledování aktivity"
   Today:  Dnes
   Today started activities: "Dnes započaté aktivity"
   Tracked activity: "Sledovaná aktivita"
   Toggle sidebar: Zap./Vyp. postranní panel
-  
-  
+
+
   # Today, Datetime
   Activity:  Aktivita
   From:  Od
   To:  Do
-  
-  
-  
+
+

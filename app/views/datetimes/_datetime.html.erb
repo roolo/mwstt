@@ -28,9 +28,9 @@
 
   <td class="action">
     <% unless datetime.in_ctt == true then %>
-        <%= link_to link_to image_tag('icons/iconset/nuvola/in_ctt.png', :alt => t('In CTT'), :title => t('Yes, this is item is written to central time tracker') ), datetime_in_ctt_url(datetime) %>
+        <%= link_to link_to image_tag('icons/iconset/'+current_user.icon_set+'/in_ctt.png', :alt => t('In CTT'), :title => t('Yes, this is item is written to central time tracker') ), datetime_in_ctt_url(datetime) %>
   <% else %>
-        <%= link_to link_to image_tag('icons/iconset/nuvola/not_in_ctt.png', :alt => t('Not in CTT'), :title => t('No, this is item is not yet written to central time tracker')), datetime_not_in_ctt_url(datetime), :confirm => t('Are you sure?') %>
+        <%= link_to link_to image_tag('icons/iconset/'+current_user.icon_set+'/not_in_ctt.png', :alt => t('Not in CTT'), :title => t('No, this is item is not yet written to central time tracker')), datetime_not_in_ctt_url(datetime), :confirm => t('Are you sure?') %>
     <% end %>
   </td>
   <%= render :partial => 'default/actions', :locals=>{:object => datetime}%>
