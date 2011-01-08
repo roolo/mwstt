@@ -1,3 +1,3 @@
-<td><%= link_to t('Show'), object %></td>
-<td><%= link_to t('Edit'), eval('edit_'+object.class.name.downcase+'_path(object)') %></td>
-<td><%= link_to t('Destroy'), object, :confirm => t('Are you sure?'), :method => :delete %></td>
+<td class="action"><%= link_to image_tag('icons/iconset/nuvola/show.png', :title => t('Show'), :alt => t('Show')), object %></td>
+<td class="action"><%= link_to image_tag('icons/iconset/nuvola/edit.png', :title => t('Edit'), :alt => t('Edit')), eval('edit_'+object.class.name.downcase+'_path(object)') %></td>
+<td class="action last"><%= link_to image_tag('icons/iconset/nuvola/destroy.png', :title => t('Destroy')), object, :confirm => t('Are you sure?'), :method => :delete %></td>
