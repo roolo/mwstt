@@ -48,3 +48,7 @@ table.form td, table.form th {
 table.form tr.actions td {
 	text-align:	center;
 }
+
+tr.in_ctt {
+    background:  #b7ff93;
+}

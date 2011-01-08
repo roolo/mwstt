@@ -12,6 +12,11 @@ en:
   Logout:  Logout
   Register:  Register
   Login:  Login
+  Are you sure?:  Are you sure?
+  Not in CTT:  Not in CTT
+  In CTT:  In CTT
+  Yes, this is item is written to central time tracker:  Yes, this is item is written to central time tracker
+  No, this is item is not yet written to central time tracker: No, this is item is not yet written to central time tracker
 
   # Account
   Account informations:  Account informations

@@ -14,6 +14,8 @@ MwsttFs::Application.routes.draw do
 
   match 'datetimes/start' => 'datetimes#start'
   match 'datetimes/stop' => 'datetimes#stop'
+  match 'datetimes/:id/in_ctt' => 'datetimes#set_in_ctt', :as => :datetime_in_ctt
+  match 'datetimes/:id/not_in_ctt' => 'datetimes#set_not_in_ctt', :as => :datetime_not_in_ctt
   resources :datetimes
   
   match "login" => "user_sessions#new"

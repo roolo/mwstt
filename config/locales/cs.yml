@@ -9,6 +9,11 @@ cs:
   Logout:  Odhlásit
   Register:  Register
   Login:  Login
+  Are you sure?:  Jste si jistí?
+  Not in CTT:  Není v CTT
+  In CTT:  Je v CTT
+  Yes, this is item is written to central time tracker:  Ano, tato položka je zapsána v centrálním time trackeru
+  No, this is item is not yet written to central time tracker: Ne, tato položka ještě není zapsána v centrálním time trackeru
   
   # Account
   Account informations:  Informace o účtu

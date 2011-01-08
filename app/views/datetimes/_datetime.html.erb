@@ -1,32 +1,39 @@
-<tr>
-	<td>
-	    <% if datetime.activities_id.nil? %>
-	    	&nbsp;
-		<% else %>
-	    	<%= link_to Activity.find(datetime.activities_id).name, Activity.find(datetime.activities_id) %>
-	    <% end %>
-	</td>
-<td>
-	<% if datetime.start.today? %>
-	    <%= datetime.start.to_formatted_s :time %>
-	<% else %>
-	    <%= datetime.start%>
-	<% end %>
-</td>
-<td>
-	<% if(datetime.stop.nil?) %>
-		&nbsp;
-	<% else%>
-    	<% if datetime.stop.today? %>
-	    	<%= datetime.stop.to_formatted_s :time %>
-		<% else %>
-		    <%= datetime.stop%>
-		<% end %>
-	<% end%>
-</td>
-<td><%= datetime.tags_from(current_user) %></td>
+<tr<%= ' class=in_ctt' if datetime.in_ctt == true %>>
+  <td>
+    <% if datetime.activities_id.nil? %>
+        &nbsp;
+    <% else %>
+        <%= link_to Activity.find(datetime.activities_id).name, Activity.find(datetime.activities_id) %>
+    <% end %>
+  </td>
+  <td>
+    <% if datetime.start.today? %>
+        <%= datetime.start.to_formatted_s :time %>
+    <% else %>
+        <%= datetime.start %>
+    <% end %>
+  </td>
+  <td>
+    <% if (datetime.stop.nil?) %>
+        &nbsp;
+    <% else %>
+        <% if datetime.stop.today? %>
+            <%= datetime.stop.to_formatted_s :time %>
+        <% else %>
+            <%= datetime.stop %>
+        <% end %>
+    <% end %>
+  </td>
+  <td><%= datetime.tags_from(current_user) %></td>
 
-<td><%= link_to t('Show'), datetime %></td>
-<td><%= link_to t('Edit'), edit_datetime_path(datetime) %></td>
-<td><%= link_to t('Destroy'), datetime, :confirm => 'Are you sure?', :method => :delete %></td>
+  <td>
+    <% unless datetime.in_ctt == true then %>
+        <%= link_to t('In CTT'), datetime_in_ctt_url(datetime), :title => t('Yes, this is item is written to central time tracker') %>
+  <% else %>
+        <%= link_to t('Not in CTT'), datetime_not_in_ctt_url(datetime), :confirm => t('Are you sure?'), :title => t('No, this is item is not yet written to central time tracker') %>
+    <% end %>
+  </td>
+  <td><%= link_to t('Show'), datetime %></td>
+  <td><%= link_to t('Edit'), edit_datetime_path(datetime) %></td>
+  <td><%= link_to t('Destroy'), datetime, :confirm => t('Are you sure?'), :method => :delete %></td>
 </tr>

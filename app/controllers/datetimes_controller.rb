@@ -76,4 +76,24 @@ class DatetimesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def set_in_ctt
+    datetime = Datetime.find params[:id]
+    datetime.in_ctt = true
+
+    if datetime.save
+      redirect_to request.env['HTTP_REFERER']
+    end
+
+  end
+
+  def set_not_in_ctt
+    datetime = Datetime.find params[:id]
+    datetime.in_ctt = false
+    
+    if datetime.save
+      redirect_to request.env['HTTP_REFERER']
+    end
+
+  end
 end
