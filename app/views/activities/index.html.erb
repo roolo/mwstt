@@ -11,9 +11,7 @@
   <tr>
     <td><%= activity.name %></td>
     <td><%= activity.description %></td>
-    <td><%= link_to t('Show'), activity %></td>
-    <td><%= link_to t('Edit'), edit_activity_path(activity) %></td>
-    <td><%= link_to t('Destroy'), activity, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%= render :partial => 'default/actions', :locals=>{:object => activity}%>
   </tr>
 <% end %>
 </table>

@@ -1,0 +1,3 @@
+<td><%= link_to t('Show'), object %></td>
+<td><%= link_to t('Edit'), eval('edit_'+object.class.name.downcase+'_path(object)') %></td>
+<td><%= link_to t('Destroy'), object, :confirm => t('Are you sure?'), :method => :delete %></td>

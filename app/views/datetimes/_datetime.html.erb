@@ -33,7 +33,5 @@
         <%= link_to t('Not in CTT'), datetime_not_in_ctt_url(datetime), :confirm => t('Are you sure?'), :title => t('No, this is item is not yet written to central time tracker') %>
     <% end %>
   </td>
-  <td><%= link_to t('Show'), datetime %></td>
-  <td><%= link_to t('Edit'), edit_datetime_path(datetime) %></td>
-  <td><%= link_to t('Destroy'), datetime, :confirm => t('Are you sure?'), :method => :delete %></td>
+  <%= render :partial => 'default/actions', :locals=>{:object => datetime}%>
 </tr>
