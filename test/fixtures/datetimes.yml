@@ -1,9 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  start: 2010-11-01 22:34:27
-  stop: 2010-11-01 22:34:27
+right_datetime:
+  start: 2011-03-23 22:34:27
+  stop: 2011-03-23 22:40:27
 
-two:
-  start: 2010-11-01 22:34:27
+datetime_with_no_start:
   stop: 2010-11-01 22:34:27

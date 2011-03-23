@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+right_user:
+  username: right_user
+  email:  right_user@bad_place.ru
+  locales:
+  password: password
+  password_confirmation: password
+  icon_set:

@@ -1,9 +1,14 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  description: MyText
+activity_with_name:
+  name: Carrot digging
+  description: Carrot will not stand up and it will not go to your mouth
 
-two:
-  name: MyString
-  description: MyText
+activity_without_name:
+  name:
+  description: Carrot will not stand up and it will not go to your mouth
+
+activity_without_description:
+  name: Carrot digging
+  description:
+

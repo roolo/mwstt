@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  description: MyText
+right_project:
+  name: Project Right
+  description: Project in which is everything done correctly
   project: 
 
-two:
-  name: MyString
-  description: MyText
+project_without_name:
+  name:
+  description: Project in which is everything done correctly
   project: 
