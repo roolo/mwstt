@@ -23,7 +23,6 @@ class AccountController < ApplicationController
   
   # Handles creation of user - Registration
   def create
-    debugger
     @user = User.new(params[:user])
 
     respond_to do |format|
