@@ -1,4 +1,6 @@
 MwsttFs::Application.routes.draw do
+  post "ajax/activities_contains"
+
   match "tags" => "tags#index"
   match "tags/index" => "tags#index"
   match "tags/show/:tag_id" => "tags#show"

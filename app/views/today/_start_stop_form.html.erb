@@ -3,8 +3,18 @@
 		<button type="submit" name="<%= @start_stop_action %>"><%= @start_stop_action.capitalize %></button>
 		<strong><%= t('Tracked activity') %>:</strong>
 		<% if @start_stop_action == 'start' %>
-			<%= text_field :new_tracking_info, :activity_name %>
+			<%= text_field :new_tracking_info, :activity_name, :size => 60 %>
 			<%= text_field :new_tracking_info, :datetime_params %>
+            <% javascript_tag do %>
+                document.observe("dom:loaded", function() {
+                    new Ajax.Autocompleter(
+                        'new_tracking_info_activity_name',
+                        'activity-name-suggestion',
+                        '<%= url_for :controller => 'ajax', :action => 'activities_contains' %>'
+                    )
+                })
+            <% end %>
+            <div id="activity-name-suggestion" class="autocomplete"></div>
 		<% else %>
 			<%= @activity_spent %> - <%= @activity_name %>
 		<% end %>
