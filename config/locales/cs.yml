@@ -1,3 +1,6 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
 cs:
   # General
   Actions:  Akce
@@ -51,9 +54,13 @@ cs:
 
   # Today
   Activity tracking: "Sledování aktivity"
+  Activities: Activities
+  Datetimes:  Časy
+  Projects: Projekty
   Today:  Dnes
   Today started activities: "Dnes započaté aktivity"
   Tracked activity: "Sledovaná aktivita"
+  Tracking: Sledování
   Toggle sidebar: Zap./Vyp. postranní panel
 
 

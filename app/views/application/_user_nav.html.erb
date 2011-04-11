@@ -1,3 +1,11 @@
+<div id="application_nav">
+  <%= link_to t('Tracking'), :controller => 'today', :action => 'index' %> |
+  <%= link_to t('Projects'), :controller => 'projects', :action => 'index' %> |
+  <%= link_to t('Activities'), :controller => 'activities', :action => 'index' %> |
+  <%= link_to t('Datetimes'), :controller => 'datetimes', :action => 'index' %> |
+
+</div>
+
 <div id="user_nav">
   <% if current_user.nil? %>
     <%= link_to t("Register"), :controller => 'account', :action => 'new' %> |

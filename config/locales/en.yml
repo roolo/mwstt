@@ -46,6 +46,7 @@ en:
   Project:  Project
 
   # Tags
+  Listing Tags:  Přehled značek
   Tag:  Tag
   Tags:  Tags
   Datetimes/Activities:  Datetimes/Activities
@@ -53,9 +54,13 @@ en:
   
   # Today
   Activity tracking: "Activity tracking"
+  Activities: Activities
+  Datetimes:  Datetimes
+  Projects: Projects
   Today:  Today
   Today started activities: "Today started activities"
   Tracked activity: "Tracked activity"
+  Tracking: Tracking
   Toggle sidebar: Toggle sidebar
   
   
