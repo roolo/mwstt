@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class PopulateLocales < ActiveRecord::Migration
   def self.up
     english = Locale.new :name => 'English', :locale_code => 'en'
