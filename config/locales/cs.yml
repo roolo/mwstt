@@ -70,3 +70,6 @@ cs:
   To:  Do
 
 
+  date:
+    month_names: [Leden, Únor,, Březen, Duben, Květen, Červen, Červenec, Srpen, Září, Říjen, Listopad, Prosinec]
+    order:  [ :day, :month, :year ]
