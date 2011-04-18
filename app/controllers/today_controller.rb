@@ -8,6 +8,11 @@ class TodayController < ApplicationController
   # Handles starting and stoping of work, lists todays past work
   def index
     @datetimes = current_user.datetimes.where ["DATE(start) = DATE(?)", Time.now]
+
+    if params[:new_tracking_info]
+      @desired_activity_name = params[:new_tracking_info][:activity_name]
+    end
+
     self.prepare_tracking_data
     
     @tags = current_user.datetimes.tag_counts_on(:tags)
@@ -22,11 +27,11 @@ class TodayController < ApplicationController
   def prepare_tracking_data
     @start_stop_action = self.get_start_stop_action
     
-    opened_datetime = Datetime.get_opened_one current_user
-    if opened_datetime.nil?
+    @opened_datetime = Datetime.get_opened_one current_user
+    if @opened_datetime.nil?
       @activity_name = ''
     else
-      @activity = Activity.find(opened_datetime.activities_id)
+      @activity = Activity.find(@opened_datetime.activities_id)
       @activity_name = @activity.name
       @activity_spent = self.get_activity_spent_time
     end
@@ -56,10 +61,20 @@ class TodayController < ApplicationController
   
   # Starts tracking time on activity with name given as request parameter 
   def start
-    newDatetime = Datetime.getNewDatetime params[:new_tracking_info], current_user
-    
-    redirect_to(:action => "index")
-    
+    redirect_params = {:action => "index"}
+
+    begin
+      newDatetime = Datetime.get_new_datetime params[:new_tracking_info], current_user
+    rescue Exceptions::ActivityAlreadyBelongsToProject => exception
+      flash[:notice] = 'Project assignment was deleted. Activity already has assigned another project.'
+      redirect_params.merge!({
+        :activity_name => params[:new_tracking_info][:activity_name],
+        :datetime_params => params[:new_tracking_info][:datetime_params].gsub(/@(\w*)/, '').strip
+      })
+    end
+
+    redirect_to(redirect_params)
+
   end
   
   # Stops tracking time on opened datetime

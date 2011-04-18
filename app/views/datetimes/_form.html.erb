@@ -15,9 +15,15 @@
     <%= f.label :start %><br />
     <%= f.datetime_select :start %>
   </div>
+  <% unless @datetime.stop.nil? %>
   <div class="field">
     <%= f.label :stop %><br />
     <%= f.datetime_select :stop %>
+  </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
   </div>
   <div class="actions">
     <%= f.submit %>

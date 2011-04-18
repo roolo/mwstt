@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110108201902) do
+ActiveRecord::Schema.define(:version => 20110418201849) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project_id"
   end
 
   create_table "datetimes", :force => true do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20110108201902) do
     t.integer  "activities_id"
     t.integer  "user_id"
     t.boolean  "in_ctt"
+    t.text     "description"
   end
 
   create_table "locales", :force => true do |t|
