@@ -3,7 +3,9 @@
     <% if datetime.activities_id.nil? %>
         &nbsp;
     <% else %>
-        <%= link_to Activity.find(datetime.activities_id).name, Activity.find(datetime.activities_id) %>
+        <%= link_to_with_full_title Activity.find(datetime.activities_id).name,
+                                    Activity.find(datetime.activities_id)
+        %>
     <% end %>
   </td>
   <td>
