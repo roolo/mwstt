@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   before_filter :set_locale
+  before_filter :set_timezone
   
   private
   def current_user_session
@@ -38,10 +39,13 @@ class ApplicationController < ActionController::Base
   end
   
   def set_locale
-  # if params[:locale] is nil then I18n.default_locale will be used
-  unless current_user.nil?
-    I18n.locale = Locale.find(current_user.locales_id).locale_code
+    # if params[:locale] is nil then I18n.default_locale will be used
+    unless current_user.nil?
+      I18n.locale = Locale.find(current_user.locales_id).locale_code
+    end
   end
-end
 
+  def set_timezone
+    Time.zone = current_user.timezone if current_user
+  end
 end

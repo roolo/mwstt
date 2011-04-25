@@ -30,6 +30,15 @@
   </tr>
   <tr>
     <th>
+        <%= t('Timezone') %>:
+    </th>
+    <td>
+    	<%= f.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
         <%= t('Icon set') %>:
     </th>
     <td>
