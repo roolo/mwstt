@@ -11,8 +11,13 @@
 </p>
 
 <p>
+  <b><%= t('Description') %>:</b>
+  <%= simple_format @datetime.description %>
+</p>
+
+<p>
   <b><%= t('Tags') %>:</b>
-  <%= @datetime.tags.join ', ' %>
+  <%= @datetime.tags_from(current_user) %>
 </p>
 
 
