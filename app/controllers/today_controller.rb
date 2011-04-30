@@ -45,7 +45,7 @@ class TodayController < ApplicationController
   def get_activity_spent_time
     datetime_start = Datetime.get_opened_one(current_user).start
     activity_spent_seconds = Time.now - datetime_start
-    return [ activity_spent_seconds.to_i / 3600, activity_spent_seconds.to_i / 60 % 60 ].map{ |t| t.to_s.rjust(2, '0') }.join(':')
+    [ activity_spent_seconds.to_i / 3600, activity_spent_seconds.to_i / 60 % 60 ].map{ |t| t.to_s.rjust(2, '0') }.join(':')
   end
   
   # Returns code of action which should be performed by clicking on start/stop button

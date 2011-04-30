@@ -15,17 +15,20 @@
         <%= datetime.start %>
     <% end %>
   </td>
+  <% if (datetime.stop.nil?) %>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  <% else %>
   <td>
-    <% if (datetime.stop.nil?) %>
-        &nbsp;
+    <% if datetime.stop.today? %>
+        <%= datetime.stop.to_formatted_s :time %>
     <% else %>
-        <% if datetime.stop.today? %>
-            <%= datetime.stop.to_formatted_s :time %>
-        <% else %>
-            <%= datetime.stop %>
-        <% end %>
+        <%= datetime.stop %>
     <% end %>
-  </td>
+    </td>
+    <td><%= print_time_difference datetime.start, datetime.stop %></td>
+  <% end %>
+
   <td><%= datetime.tags_from(current_user) %></td>
 
   <td class="action">
