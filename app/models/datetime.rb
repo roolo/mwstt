@@ -28,7 +28,7 @@ class Datetime < ActiveRecord::Base
 
     new_datetime = self.new
     creator.tag(new_datetime, :with => datetime_tags, :on => 'tags')
-    new_datetime.activities_id = joined_activity.id
+    new_datetime.activity = joined_activity
     new_datetime.user = creator
     new_datetime.start = DateTime.now
     new_datetime.stop = nil
