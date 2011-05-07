@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :activity_id %><br/>
+    <%= collection_select :datetime, :activity_id, Activity.all(:order => 'name ASC'), :id, :name %>
+  </div>
+
+  <div class="field">
     <%= f.label :start %><br />
     <%= f.datetime_select :start %>
   </div>
