@@ -31,7 +31,7 @@ class TodayController < ApplicationController
     if @opened_datetime.nil?
       @activity_name = ''
     else
-      @activity = Activity.find(@opened_datetime.activities_id)
+      @activity = @opened_datetime.activity
       @activity_name = @activity.name
       @activity_spent = self.get_activity_spent_time
     end
@@ -52,7 +52,7 @@ class TodayController < ApplicationController
   #
   # @return [String]
   def get_start_stop_action
-    if Datetime.count(:conditions => "stop IS NULL") > 0
+    if current_user.datetimes.count(:conditions => "stop IS NULL") > 0
       return DATETIME_STOP_ACTION_CODE
     else
       return DATETIME_START_ACTION_CODE
@@ -79,7 +79,7 @@ class TodayController < ApplicationController
   
   # Stops tracking time on opened datetime
   def stop
-    stopableDatetimes = Datetime.find_all_by_stop nil
+    stopableDatetimes = current_user.datetimes :condition => "stop = NULL"
     
     stopableDatetimes.each do |datetime|
       datetime.stop = DateTime.now

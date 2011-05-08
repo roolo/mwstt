@@ -4,7 +4,7 @@ class DatetimesController < ApplicationController
   
   # Serves listing of existing datetimes
   def index
-    @datetimes = Datetime.all
+    @datetimes = current_user.datetimes
 
     respond_to do |format|
       format.html # index.html.erb

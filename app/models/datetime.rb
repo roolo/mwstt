@@ -38,7 +38,9 @@ class Datetime < ActiveRecord::Base
   end
   
   # Returns datetime which is not finished
-  #
+  # 
+  # @param [User] current_user User to which should the opened datetime belongs to
+  # 
   # @return [Datetime]
   def self.get_opened_one current_user
     return current_user.datetimes.find_by_stop nil
