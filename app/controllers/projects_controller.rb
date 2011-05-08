@@ -1,5 +1,6 @@
 # Handles projects maintenace
 class ProjectsController < ApplicationController
+  before_filter :require_user
   
   # Serves listing of existing projects
   def index

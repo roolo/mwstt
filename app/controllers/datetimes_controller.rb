@@ -1,5 +1,6 @@
 # Handles datetimes maintenace
 class DatetimesController < ApplicationController
+  before_filter :require_user
   
   # Serves listing of existing datetimes
   def index

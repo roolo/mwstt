@@ -1,5 +1,6 @@
 # Handles activities maintenace
 class ActivitiesController < ApplicationController
+  before_filter :require_user
   
   # Serves listing of existing activities
   def index
