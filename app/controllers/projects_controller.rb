@@ -4,7 +4,13 @@ class ProjectsController < ApplicationController
   
   # Serves listing of existing projects
   def index
-    @projects = Project.all
+    @projects = Project.all   :conditions => [
+                                "datetimes.user_id = ?",
+                                current_user
+                              ],
+                              :include => {:activities => :datetimes},
+                              :order => "projects.name ASC"
+
 
     respond_to do |format|
       format.html # index.html.erb

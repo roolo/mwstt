@@ -4,7 +4,14 @@ class ActivitiesController < ApplicationController
   
   # Serves listing of existing activities
   def index
-    @activities = Activity.all
+    @activities = Activity.all  :conditions => [
+                                  "datetimes.user_id = ?",
+                                  current_user
+                                ],
+                                :include => [:datetimes],
+                                :order => "activities.name ASC"
+
+#        current_user.datetimes.map{|datetime| datetime.activity}.unique
 
     respond_to do |format|
       format.html # index.html.erb
