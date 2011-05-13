@@ -1,19 +1,19 @@
 <div id="application_nav">
-  <%= link_to t('Tracking'), :controller => 'today', :action => 'index' %> |
-  <%= link_to t('Projects'), :controller => 'projects', :action => 'index' %> |
-  <%= link_to t('Activities'), :controller => 'activities', :action => 'index' %> |
-  <%= link_to t('Datetimes'), :controller => 'datetimes', :action => 'index' %> |
+  <%= link_to t('.tracking'), :controller => 'today', :action => 'index' %> |
+  <%= link_to t('.projects'), :controller => 'projects', :action => 'index' %> |
+  <%= link_to t('.activities'), :controller => 'activities', :action => 'index' %> |
+  <%= link_to t('.datetimes'), :controller => 'datetimes', :action => 'index' %> |
 
 </div>
 
 <div id="user_nav">
   <% if current_user.nil? %>
-    <%= link_to t("Register"), :controller => 'account', :action => 'new' %> |
-    <%= link_to t("Login"), login_path %>
+    <%= link_to t(".register"), :controller => 'account', :action => 'new' %> |
+    <%= link_to t(".login"), login_path %>
   <% else %>
     <%= link_to current_user.username, :controller => 'account', :action=>'index' %> [
-    <%= link_to t("Edit Account"), :controller => 'account', :action=>'edit' %> |
-    <%= link_to t("Logout"), logout_path %>
+    <%= link_to t(".edit_account"), :controller => 'account', :action=>'edit' %> |
+    <%= link_to t(".logout"), logout_path %>
 	]
   <% end %>
 </div>

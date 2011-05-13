@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%= t('Name') %>:</b>
+  <b><%= Project.human_attribute_name 'name' %>:</b>
   <%= @project.name %>
 </p>
 
 <p>
-  <b><%= t('Description') %>:</b>
+  <b><%= Project.human_attribute_name 'description' %>:</b>
   <%= @project.description %>
 </p>
 
 <p>
-  <b><%= t('Project') %>:</b>
+  <b><%= Project.human_attribute_name 'project' %>:</b>
   <%= @project.project %>
 </p>
 
 
-<%= link_to t('Edit'), edit_project_path(@project) %> |
-<%= link_to t('Back'), projects_path %>
+<%= link_to t('default.navigation.edit'), edit_project_path(@project) %> |
+<%= link_to t('default.navigation.back'), projects_path %>

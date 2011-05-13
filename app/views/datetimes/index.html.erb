@@ -1,12 +1,12 @@
-<h1><%= t('Listing datetimes') %></h1>
+<h1><%= t('.title') %></h1>
 <table>
   <tr>
-    <th><%= t('Activity') %></th>
-	<th><%= t('From') %></th>
-	<th><%= t('To') %></th>
-	<th><%= t('Spent time') %></th>
-	<th><%= t('Tags') %></th>
-	<th colspan="4"><%= t('Actions') %></th>
+    <th><%= Datetime.human_attribute_name 'activity' %></th>
+	<th><%= Datetime.human_attribute_name 'start' %></th>
+	<th><%= Datetime.human_attribute_name 'stop' %></th>
+	<th><%= Datetime.human_attribute_name 'spent_time' %></th>
+	<th><%= Datetime.human_attribute_name 'tags' %></th>
+	<th colspan="4"><%= t('default.actions.actions') %></th>
   </tr>
 
 <% @datetimes.each do |datetime| %>
@@ -16,4 +16,4 @@
 
 <br />
 
-<%= link_to t('New Datetime'), new_datetime_path %>
+<%= link_to t('.new'), new_datetime_path %>
