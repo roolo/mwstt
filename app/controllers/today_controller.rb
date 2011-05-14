@@ -79,9 +79,14 @@ class TodayController < ApplicationController
   
   # Stops tracking time on opened datetime
   def stop
-    stopableDatetimes = current_user.datetimes :condition => "stop = NULL"
-    
-    stopableDatetimes.each do |datetime|
+    stopable_datetimes = Datetime.all   :conditions => [  " user_id = ?
+                                                            AND stop IS NULL
+                                                          ",
+                                                          current_user,
+                                        ],
+                                        :limit => 1
+
+    stopable_datetimes.each do |datetime|
       datetime.stop = DateTime.now
       datetime.save
     end
