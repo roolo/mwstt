@@ -2,76 +2,100 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 cs:
-  # General
-  Actions:  Akce
-  Edit:  Editovat
-  Destroy:  Zničit
-  Show:  Zobrazit
-  Back:  Zpět
-  Edit Account:  Editovat účet
-  Logout:  Odhlásit
-  Register:  Register
-  Login:  Login
-  Are you sure?:  Jste si jistí?
-  Not in CTT:  Není v CTT
-  In CTT:  Je v CTT
-  Yes, this is item is written to central time tracker:  Ano, tato položka je zapsána v centrálním time trackeru
-  No, this is item is not yet written to central time tracker: Ne, tato položka ještě není zapsána v centrálním time trackeru
-
-  # Account
-  Account informations:  Informace o účtu
-  Editing account:  Editace účtu
-  Account was successfully updated:  Účet byl úspěšně upraven
-  Username:  Uživatelské jméno
-  Email:  Email
-  Language:  Jazyk
-  Registration: Registration
-  Icon set:  Sada ikon
-
-  # Activities
-  New Activity: Nová aktivita
-  Listing activities: Přehled aktivit
-
-  #Datetimes
-  New Datetime: Nový čas
-  Listing datetimes: Přehled časů
-  Start:  Start
-  Stop:  Stop
-
-  # Projects
-  Description:  Popis
-  Name:  Název
-  New Project:  Nový projekt
-  Listing projects: Přehled projektů
-  Project:  Projekt
-
-  # Tags
-  Listing Tags:  Přehled značek
-  Tag:  Značka
-  Tags:  Značky
-  Datetimes/Activities:  Časy/Aktivity
-  Tags listing:  Přehled značek
-
-  # Today
-  Activity tracking: "Sledování aktivity"
-  Activities: Activities
-  Datetimes:  Časy
-  Projects: Projekty
-  Timezone: Časová zóna
-  Today:  Dnes
-  Today started activities: "Dnes započaté aktivity"
-  Tracked activity: "Sledovaná aktivita"
-  Tracking: Sledování
-  Toggle sidebar: Zap./Vyp. postranní panel
-
-
-  # Today, Datetime
-  Activity:  Aktivita
-  Spent time: Strávený čas
-  From:  Od
-  To:  Do
-
+  account:
+    show:
+      title:  Informace o účtu
+    edit:
+      notice:
+        success:  Účet byl úspěšně upraven
+      title:  Editace účtu
+  activerecord:
+    attributes:
+      activity:
+        name: Název
+        description:  Popis
+        project: Projekt
+      datetime:
+        activity:  Aktivita
+        description:  Popis
+        start:  Začátek
+        stop:  Konec
+        spent_time: Strávený čas
+        tags: Značky
+      project:
+        name: Název
+        description: Popis
+        project:  Projekt
+      user:
+        email: Email
+        icon_set:  Sada ikon
+        language:  Jazyk
+        password: Heslo
+        password_confirmation: Potvrzení hesla
+        username: Uživatelské jméno
+        timezone: Časová zóna
+  activities:
+    index:
+      new: Nová aktivita
+      title: Přehled aktivit
+  application:
+    user_nav:
+      activities: Activities
+      datetimes:  Časy
+      edit_account:  Editovat účet
+      login:  Login
+      logout:  Odhlásit
+      projects: Projekty
+      register:  Register
+      tracking: Sledování
 
   date:
-    month_names: [Leden, Únor,, Březen, Duben, Květen, Červen, Červenec, Srpen, Září, Říjen, Listopad, Prosinec]
+    month_names: [Leden, Únor, Březen, Duben, Květen, Červen, Červenec, Srpen, Září, Říjen, Listopad, Prosinec]
     order:  [ :day, :month, :year ]
+  datetimes:
+    ctt:
+      not_in: Není v CTT
+      in:  Je v CTT
+      title:
+        in_yes:  Ano, tato položka je zapsána v centrálním time trackeru
+        in_no: Ne, tato položka ještě není zapsána v centrálním time trackeru
+    index:
+      new: Nový čas
+      title: Přehled časů
+    navigation:
+
+  default:
+    actions:
+      actions:  Akce
+      edit:  Editovat
+      confirmation:  Jste si jistí?
+      destroy:  Zničit
+      show:  Zobrazit
+    navigation:
+      back:  Zpět
+      edit:  Editovat
+      show:  Zobrazit
+  projects:
+    index:
+      description:  Popis
+      name:  Název
+      navigation:
+        new:  Nový projekt
+      project:  Projekt
+      title:  Přehled projektů
+  tags:
+    datetimes_activities:  Časy/Aktivity
+    index:
+      title:  Přehled značek
+    tag:  Značka
+    tags:  Značky
+  today:
+    start_stop_form:
+      activity_tracking: "Sledování aktivity"
+      tracked_activity: "Sledovaná aktivita"
+    index:
+      started_activities: "Dnes započaté aktivity"
+      title:  Dnes
+      toggle_sidebar: Zap./Vyp. postranní panel
+    tag_cloud:
+      tags: Značky

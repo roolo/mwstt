@@ -2,30 +2,30 @@
 
 
 <p>
-  <b><%= t('Activity') %>:</b>
+  <b><%= Datetime.human_attribute_name 'activity' %>:</b>
   <%= @datetime.activity %>
 </p>
 
 <p>
-  <b><%= t('Start') %>:</b>
+  <b><%= Datetime.human_attribute_name 'start' %>:</b>
   <%= @datetime.start %>
 </p>
 
 <p>
-  <b><%= t('Stop') %>:</b>
+  <b><%= Datetime.human_attribute_name 'stop' %>:</b>
   <%= @datetime.stop %>
 </p>
 
 <p>
-  <b><%= t('Description') %>:</b>
+  <b><%= Datetime.human_attribute_name 'description' %>:</b>
   <%= simple_format @datetime.description %>
 </p>
 
 <p>
-  <b><%= t('Tags') %>:</b>
+  <b><%= Datetime.human_attribute_name 'tags' %>:</b>
   <%= @datetime.tags_from(current_user) %>
 </p>
 
 
-<%= link_to t('Edit'), edit_datetime_path(@datetime) %> |
-<%= link_to t('Back'), datetimes_path %>
+<%= link_to t('default.navigation.edit'), edit_datetime_path(@datetime) %> |
+<%= link_to t('default.navigation.back'), datetimes_path %>

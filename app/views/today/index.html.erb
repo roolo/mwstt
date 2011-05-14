@@ -1,19 +1,19 @@
-<h1><%= t('Today') %></h1>
+<h1><%= t('.title') %></h1>
 <%= flash[:notice] %>
 <%= render 'start_stop_form' %>
 <div id="page-content">
 	<div id="tracking" class="page-part">
-		<h2><%= t('Today started activities') %></h2>
-		<button onclick="javascript:$('sidebar').toggle();$('tracking').toggleClassName('maximized');"><%= t('Toggle sidebar') %></button>
+		<h2><%= t('.started_activities') %></h2>
+		<button onclick="javascript:$('sidebar').toggle();$('tracking').toggleClassName('maximized');"><%= t('.toggle_sidebar') %></button>
 		<table>
 			<thead>
 				<tr>
-					<th><%= t('Activity') %></th>
-					<th><%= t('From') %></th>
-					<th><%= t('To') %></th>
-					<th><%= t('Spent time') %></th>
-					<th><%= t('Tags') %></th>
-					<th colspan="4"><%= t('Actions') %></th>
+					<th><%= Datetime.human_attribute_name 'activity' %></th>
+					<th><%= Datetime.human_attribute_name 'start' %></th>
+					<th><%= Datetime.human_attribute_name 'stop' %></th>
+					<th><%= Datetime.human_attribute_name 'spent_time' %></th>
+					<th><%= Datetime.human_attribute_name 'tags' %></th>
+					<th colspan="4"><%= t('default.actions.actions') %></th>
 				</tr>
 			</thead>
 			<tbody>

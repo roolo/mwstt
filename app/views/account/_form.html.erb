@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <th>
-        <%= t('Language') %>:
+        <%= f.label :locales_id %>:
     </th>
     <td>
     	<%= collection_select :user, :locales_id, Locale.all(:order => "name ASC"), :id, :name %>
@@ -30,7 +30,7 @@
   </tr>
   <tr>
     <th>
-        <%= t('Timezone') %>:
+        <%= f.label :timezone %>:
     </th>
     <td>
     	<%= f.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones %>
@@ -39,7 +39,7 @@
 
   <tr>
     <th>
-        <%= t('Icon set') %>:
+        <%= f.label :icon_set %>:
     </th>
     <td>
     	<%= f.radio_button(:icon_set, 'nuvola') %><%= f.label :icon_set_nuvola, 'Nuvola' %>

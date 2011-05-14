@@ -1,7 +1,7 @@
 <%= form_tag :action => @start_stop_action do %>
-    <%= field_set_tag t('Activity tracking') do %>
+    <%= field_set_tag t('.activity_tracking') do %>
 		<button type="submit" name="<%= @start_stop_action %>"><%= @start_stop_action.capitalize %></button>
-		<strong><%= t('Tracked activity') %>:</strong>
+		<strong><%= t('.tracked_activity') %>:</strong>
 		<% if @start_stop_action == TodayController::DATETIME_START_ACTION_CODE %>
             <%= text_field :new_tracking_info, :activity_name, :size => 60, :value => params[:activity_name] %>
             <%= text_field :new_tracking_info, :datetime_params, :value => params[:datetime_params] %>

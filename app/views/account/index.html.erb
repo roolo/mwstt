@@ -1,18 +1,18 @@
-<h1><%= t('Account informations') %></h1>
+<h1><%= t('.title') %></h1>
 <p id="notice"><%= notice %></p>
 
 <table>
 	<tr>
-  <th><%= t('Username') %>:</th>
+  <th><%= User.human_attribute_name 'username' %>:</th>
   <td><%= @user.username %></td>
 	</tr>
 <tr>
-  <th><%= t('Email') %>:</th>
+  <th><%= User.human_attribute_name 'mail' %>:</th>
   <td><%= @user.email %></td>
 </tr>
 <tr>
     <th>
-        <%= t('Language') %>:
+        <%= User.human_attribute_name 'language' %>:
     </th>
     <td>
     	<%= Locale.find(@user.locales_id).name %>
