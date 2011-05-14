@@ -6,9 +6,9 @@ cs:
     show:
       title:  Informace o účtu
     edit:
-      title:  Editace účtu
       notice:
         success:  Účet byl úspěšně upraven
+      title:  Editace účtu
   activerecord:
     attributes:
       activity:
@@ -27,13 +27,13 @@ cs:
         description: Popis
         project:  Projekt
       user:
-        username: Uživatelské jméno
         email: Email
-        timezone: Časová zóna
-        language:  Jazyk
         icon_set:  Sada ikon
+        language:  Jazyk
         password: Heslo
         password_confirmation: Potvrzení hesla
+        username: Uživatelské jméno
+        timezone: Časová zóna
   activities:
     index:
       new: Nová aktivita
@@ -42,53 +42,53 @@ cs:
     user_nav:
       activities: Activities
       datetimes:  Časy
+      edit_account:  Editovat účet
+      login:  Login
+      logout:  Odhlásit
       projects: Projekty
+      register:  Register
       tracking: Sledování
 
-      edit_account:  Editovat účet
-      logout:  Odhlásit
-      register:  Register
-      login:  Login
   date:
     month_names: [Leden, Únor, Březen, Duben, Květen, Červen, Červenec, Srpen, Září, Říjen, Listopad, Prosinec]
     order:  [ :day, :month, :year ]
   datetimes:
-    navigation:
-    index:
-      new: Nový čas
-      title: Přehled časů
-
     ctt:
       not_in: Není v CTT
       in:  Je v CTT
       title:
         in_yes:  Ano, tato položka je zapsána v centrálním time trackeru
         in_no: Ne, tato položka ještě není zapsána v centrálním time trackeru
+    index:
+      new: Nový čas
+      title: Přehled časů
+    navigation:
+
   default:
     actions:
       actions:  Akce
       edit:  Editovat
-      destroy:  Zničit
       confirmation:  Jste si jistí?
+      destroy:  Zničit
       show:  Zobrazit
     navigation:
-      show:  Zobrazit
       back:  Zpět
       edit:  Editovat
+      show:  Zobrazit
   projects:
     index:
-      navigation:
-        new:  Nový projekt
-      title:  Přehled projektů
       description:  Popis
       name:  Název
+      navigation:
+        new:  Nový projekt
       project:  Projekt
+      title:  Přehled projektů
   tags:
+    datetimes_activities:  Časy/Aktivity
     index:
       title:  Přehled značek
     tag:  Značka
     tags:  Značky
-    datetimes_activities:  Časy/Aktivity
   today:
     start_stop_form:
       activity_tracking: "Sledování aktivity"
