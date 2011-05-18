@@ -14,7 +14,12 @@ class DatetimesController < ApplicationController
   
   # Serves details about particular datetime
   def show
-    @datetime = Datetime.find(params[:id])
+    @datetime = Datetime.find(  params[:id],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +39,12 @@ class DatetimesController < ApplicationController
   
   # Serves editation of particular datetime
   def edit
-    @datetime = Datetime.find(params[:id])
+    @datetime = Datetime.find(  params[:id],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
   end
 
   # Handles creation of datetime
@@ -54,7 +64,12 @@ class DatetimesController < ApplicationController
   
   # Handles modification of datetime
   def update
-    @datetime = Datetime.find(params[:id])
+    @datetime = Datetime.find(  params[:id],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
 
     respond_to do |format|
       if @datetime.update_attributes(params[:datetime])
@@ -69,7 +84,12 @@ class DatetimesController < ApplicationController
 
   # Handles destroing of datetime
   def destroy
-    @datetime = Datetime.find(params[:id])
+    @datetime = Datetime.find(  params[:id],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
     @datetime.destroy
 
     respond_to do |format|
@@ -79,7 +99,12 @@ class DatetimesController < ApplicationController
   end
 
   def set_in_ctt
-    datetime = Datetime.find params[:id]
+    datetime = Datetime.find(  params[:id],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
     datetime.in_ctt = true
 
     if datetime.save
@@ -89,7 +114,12 @@ class DatetimesController < ApplicationController
   end
 
   def set_not_in_ctt
-    datetime = Datetime.find params[:id]
+    datetime = Datetime.find(  params[:id],
+                                :conditions => [
+                                  "datetimes.user_id = ?",
+                                  current_user
+                                ]
+    )
     datetime.in_ctt = false
     
     if datetime.save

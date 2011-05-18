@@ -21,7 +21,13 @@ class ActivitiesController < ApplicationController
 
   # Serves details about particular activity
   def show
-    @activity = Activity.find(params[:id])
+    @activity = Activity.find(  params[:id],
+                                :include => [:datetimes],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,7 +47,13 @@ class ActivitiesController < ApplicationController
 
   # Serves editation of particular activity
   def edit
-    @activity = Activity.find(params[:id])
+    @activity = Activity.find(  params[:id],
+                                :include => [:datetimes],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
   end
 
   # Handles creation of activity
@@ -61,7 +73,13 @@ class ActivitiesController < ApplicationController
 
   # Handles modification of activity
   def update
-    @activity = Activity.find(params[:id])
+    @activity = Activity.find(  params[:id],
+                                :include => [:datetimes],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
 
     respond_to do |format|
       if @activity.update_attributes(params[:activity])

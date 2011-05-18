@@ -20,7 +20,13 @@ class ProjectsController < ApplicationController
 
   # Serves details about particular project
   def show
-    @project = Project.find(params[:id])
+    @project = Project.find params[:id],
+                            :conditions => [
+                              "datetimes.user_id = ?",
+                              current_user
+                            ],
+                            :include => {:activities => :datetimes},
+                            :order => "projects.name ASC"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -40,7 +46,14 @@ class ProjectsController < ApplicationController
 
   # Serves editation of particular project
   def edit
-    @project = Project.find(params[:id])
+    @project = Project.find params[:id],
+                            :conditions => [
+                              "datetimes.user_id = ?",
+                              current_user
+                            ],
+                            :include => {:activities => :datetimes},
+                            :order => "projects.name ASC"
+
   end
 
   # Handles creation of project
@@ -60,7 +73,14 @@ class ProjectsController < ApplicationController
 
   # Handles modification of project
   def update
-    @project = Project.find(params[:id])
+    @project = Project.find params[:id],
+                            :conditions => [
+                              "datetimes.user_id = ?",
+                              current_user
+                            ],
+                            :include => {:activities => :datetimes},
+                            :order => "projects.name ASC"
+
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
@@ -75,7 +95,14 @@ class ProjectsController < ApplicationController
 
   # Handles destroing of project
   def destroy
-    @project = Project.find(params[:id])
+    @project = Project.find params[:id],
+                            :conditions => [
+                              "datetimes.user_id = ?",
+                              current_user
+                            ],
+                            :include => {:activities => :datetimes},
+                            :order => "projects.name ASC"
+
     @project.destroy
 
     respond_to do |format|

@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   before_filter :set_locale
   before_filter :set_timezone
-  
+  rescue_from ActiveRecord::RecordNotFound, :with => :rescue_action_in_public
+
   private
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
@@ -48,4 +49,15 @@ class ApplicationController < ActionController::Base
   def set_timezone
     Time.zone = current_user.timezone if current_user
   end
+
+  # handles 404 when a record is not found.
+  def rescue_action_in_public(exception)
+    case exception
+    when ActiveRecord::RecordNotFound, ActionController::UnknownAction, ActionController::RoutingError
+      render :file => "#{RAILS_ROOT}/public/404.html", :layout => 'layouts/application', :status => 404
+    else
+      super
+    end
+  end
+
 end
