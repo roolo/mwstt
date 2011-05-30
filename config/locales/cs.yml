@@ -84,9 +84,10 @@ cs:
       project:  Projekt
       title:  Přehled projektů
   tags:
-    datetimes_activities:  Časy/Aktivity
     index:
       title:  Přehled značek
+    show:
+      datetimes_activities:  Časy/Aktivity
     tag:  Značka
     tags:  Značky
   today:

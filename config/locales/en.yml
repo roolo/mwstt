@@ -80,9 +80,10 @@ en:
       new:  New Project
       title:  Listing projects
   tags:
-    datetimes_activities:  Datetimes/Activities
     index:
       title:  Tags listing
+    show:
+      datetimes_activities:  Datetimes/Activities
     tag:  Tag
     tags:  Tags
   today:
