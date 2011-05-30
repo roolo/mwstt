@@ -83,6 +83,7 @@ cs:
         new:  Nový projekt
       project:  Projekt
       title:  Přehled projektů
+      new:  Nový projekt
   tags:
     index:
       title:  Přehled značek

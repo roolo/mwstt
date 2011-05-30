@@ -37,7 +37,7 @@ en:
   activities:
     index:
       new: New Activity
-      title: Listing activities
+      title: Activities list
   application:
     user_nav:
       activities: Activities
@@ -61,7 +61,7 @@ en:
         in_no: No, this is item is not yet written to central time tracker
     index:
       new: New Datetime
-      title: Listing datetime
+      title: Datetime list
     navigation:
 
   default:
@@ -78,10 +78,10 @@ en:
   projects:
     index:
       new:  New Project
-      title:  Listing projects
+      title:  Projects listing
   tags:
     index:
-      title:  Tags listing
+      title:  Tags list
     show:
       datetimes_activities:  Datetimes/Activities
     tag:  Tag
