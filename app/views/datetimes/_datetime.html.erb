@@ -10,9 +10,9 @@
   </td>
   <td>
     <% if datetime.start.today? %>
-        <%= datetime.start.to_formatted_s :time %>
+        <%= l datetime.start, :format => :short %>
     <% else %>
-        <%= datetime.start %>
+        <%= l datetime.start %>
     <% end %>
   </td>
   <% if (datetime.stop.nil?) %>
@@ -21,9 +21,9 @@
   <% else %>
   <td>
     <% if datetime.stop.today? %>
-        <%= datetime.stop.to_formatted_s :time %>
+        <%= l datetime.stop, :format => :short %>
     <% else %>
-        <%= datetime.stop %>
+        <%= l datetime.stop %>
     <% end %>
     </td>
     <td><%= print_time_difference datetime.start, datetime.stop %></td>

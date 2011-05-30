@@ -91,6 +91,10 @@ cs:
       datetimes_activities:  Časy/Aktivity
     tag:  Značka
     tags:  Značky
+  time:
+    formats:
+      default:  "%d.%m.%Y %H:%M:%S %z"
+      short:  "%H:%M"
   today:
     start_stop_form:
       activity_tracking: "Sledování aktivity"
