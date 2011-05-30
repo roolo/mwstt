@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :project_id %><br/>
-    <%= f.collection_select :project_id, Project.all, :id, :name %>
+    <%= f.collection_select :project_id, Project.all_owned_by(current_user), :id, :name %>
   </div>
 
   <div class="field">

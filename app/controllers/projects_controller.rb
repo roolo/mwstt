@@ -4,12 +4,7 @@ class ProjectsController < ApplicationController
   
   # Serves listing of existing projects
   def index
-    @projects = Project.all   :conditions => [
-                                "datetimes.user_id = ?",
-                                current_user
-                              ],
-                              :include => {:activities => :datetimes},
-                              :order => "projects.name ASC"
+    @projects = Project.all_owned_by current_user
 
 
     respond_to do |format|
