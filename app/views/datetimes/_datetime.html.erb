@@ -26,7 +26,10 @@
         <%= l datetime.stop %>
     <% end %>
     </td>
-    <td><%= print_time_difference datetime.start, datetime.stop %></td>
+    <td>
+      <%= print_time_difference datetime.start, datetime.stop %>
+      <%= raw clippy print_time_difference datetime.start, datetime.stop %>
+    </td>
   <% end %>
 
   <td><%= datetime.tags_from(current_user) %></td>
