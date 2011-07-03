@@ -75,6 +75,8 @@ cs:
       back:  Zpět
       edit:  Editovat
       show:  Zobrazit
+  next: následující
+  previous: předchozí
   projects:
     index:
       description:  Popis

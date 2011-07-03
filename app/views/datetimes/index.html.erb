@@ -1,4 +1,6 @@
 <h1><%= t('.title') %></h1>
+
+<%= will_paginate @datetimes %>
 <table>
   <tr>
     <th><%= Datetime.human_attribute_name 'activity' %></th>
@@ -13,6 +15,9 @@
   <%= render datetime %>
 <% end %>
 </table>
+
+
+<%= will_paginate @datetimes %>
 
 <br />
 

@@ -4,7 +4,12 @@ class DatetimesController < ApplicationController
   
   # Serves listing of existing datetimes
   def index
-    @datetimes = current_user.datetimes
+    @datetimes = Datetime.find_all_by_user_id(  current_user,
+                                                :order => 'stop DESC'
+                 )
+                 .paginate  :page => params[:page],
+                            :per_page => Datetime.per_page,
+                            :order => 'stop DESC'
 
     respond_to do |format|
       format.html # index.html.erb

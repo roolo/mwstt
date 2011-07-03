@@ -4,6 +4,9 @@ class Datetime < ActiveRecord::Base
   belongs_to  :activity
   
   belongs_to  :user
+
+  cattr_reader :per_page
+  @@per_page = 15
   
   # Starts new datetime linked to activity given by name
   #

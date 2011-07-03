@@ -75,6 +75,9 @@ en:
       back:  Back
       edit:  Edit
       show:  Show
+
+  next: následující
+  previous: předchozí
   projects:
     index:
       new:  New Project
