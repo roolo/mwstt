@@ -2,17 +2,21 @@
 layout: default
 title: How to run it
 ---
-<h3>Description</h3>
-*WEBrick*
-* this part is waiting for my free time;)
+### Run mwstt on Mac OS X (Snow Leopard/Lion)
+On other platforms this procedure should be similar
 
-*Mongrel*
-* this part is waiting for my free time;)
+#### If you not have Ruby 1.9 installed
+- install macports - http://www.macports.org/install.php
+- sudo port install ruby19
 
-*GlassFish*
-* this part is waiting for my free time;)
-
-
+#### Procedure same across all platforms
+- open Terminal/Commandline/Whatever for running commands
+- sudo gem install bundler
+- cd &lt;project dir&gt;
+- sudo bundle
+- rake1.9 db:migrate
+- ./script/rails s
+- NOW YOU ARE RUNNING MWSTT 
 
 More coming soooooooooooon… ;)
 
