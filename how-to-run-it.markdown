@@ -11,7 +11,7 @@ On other platforms this procedure should be similar
 
 #### Procedure same across all platforms
 - open Terminal/Commandline/Whatever for running commands
-- sudo gem install bundler
+- sudo gem1.9 install bundler
 - cd &lt;project dir&gt;
 - sudo bundle
 - rake1.9 db:migrate
