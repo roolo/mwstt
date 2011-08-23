@@ -8,7 +8,7 @@
 </div>
 <% end %>
 
-<%= if flash[:notice] %>
+<% if flash[:notice] %>
 <div id="info">
     <span id="notice"><%= flash[:notice] %></span>
     <%= javascript_tag visual_effect :highlight, 'notice' %>
