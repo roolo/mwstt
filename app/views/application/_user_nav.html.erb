@@ -1,3 +1,4 @@
+<% if current_user %>
 <div id="application_nav">
   <%= link_to t('.tracking'), :controller => 'today', :action => 'index' %> |
   <%= link_to t('.projects'), :controller => 'projects', :action => 'index' %> |
@@ -5,6 +6,14 @@
   <%= link_to t('.datetimes'), :controller => 'datetimes', :action => 'index' %> |
 
 </div>
+<% end %>
+
+<%= if flash[:notice] %>
+<div id="info">
+    <span id="notice"><%= flash[:notice] %></span>
+    <%= javascript_tag visual_effect :highlight, 'notice' %>
+</div>
+<% end %>
 
 <div id="user_nav">
   <% if current_user.nil? %>
