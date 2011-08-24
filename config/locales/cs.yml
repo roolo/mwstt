@@ -3,6 +3,8 @@
 
 cs:
   account:
+    index:
+      title: Přehled účtu
     show:
       title:  Informace o účtu
     edit:

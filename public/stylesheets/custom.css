@@ -1,3 +1,23 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: verdana, arial;
+}
+
+a {
+    outline: none;
+}
+
+h1 {
+    color: royalblue;
+    margin-left: 30px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #ffa500;
+}
+
 #page-content {
 	width:	100%;
 }
@@ -79,5 +99,140 @@ div.autocomplete ul li {
   padding:0px;
   height:15px;
   cursor:pointer;
+}
+
+
+
+form#new_user_session {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    background: #eee;
+    -webkit-border-radius: 20px 5px 20px 5px;
+    border-radius: 20px 5px 20px 5px;
+    padding: 20px 30px 20px 20px;
+    border: 1px solid #999;
+}
+
+form#new_user_session label {
+    background:  #999;
+    position: relative;
+    top: -1px;
+    padding: 2px 5px;
+    text-shadow: 1px 1px #ccc;
+    border-radius: 5px 5px 0 0;
+}
+
+form#new_user_session br {
+    display: none;
+}
+
+form#new_user_session input[type=text], form#new_user_session input[type=password]  {
+    border: 1px solid #999;
+    height: 20px;
+    padding: 0 5px;
+    width: 200px;
+}
+
+#control_panel {
+    background: #F5F5F5;
+    background: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1);
+    border-bottom: 1px solid #999;
+    height: 30px;
+    padding: 4px 20px;
+    line-height: 30px;
+}
+
+.field_with_errors {
+    padding: 0 !important;
+}
+
+form#new_user_session .field_with_errors input {
+    border: 1px solid  #f00;
+}
+
+form#new_user_session .field_with_errors label {
+    background: #c00;
+    color: #fff;
+    text-shadow: none;
+}
+
+div#application_nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div#application_nav ul li {
+    display: block;
+    float: left;
+    margin: 5px 10px;
+    
+}
+
+div#application_nav ul li a {
+    background: #fff;
+    background: -moz-linear-gradient(center top, #fff, #F5F5F5);
+    text-decoration: none;
+    height: 15px;
+    line-height: 15px;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid  gainsboro;
+    border-right: 1px solid  gainsboro;
+    border-radius: 5px;
+    padding: 2px 4px 4px 4px;
+    color: #000;
+}
+
+div#application_nav ul li a:hover {
+    background: #ffa500;
+    border-bottom: 1px solid  #999;
+    border-right: 1px solid  #999;
+    
+}
+
+#tag-cloud>h2 {
+    background: #999;
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 10px 0 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    text-shadow: 1px 1px #ccc;
+    font-size: 16px;
+    color: #000
+}
+
+div#tag-cloud-tags {
+    border: 1px solid #999 !important;
+}
+
+thead tr, tbody th {
+    background: #ffa500;
+    border: 1px solid #ffa500;
+}
+
+th {
+    border: none !important;
+}
+
+#tracking.page-part {
+   margin: none !important;
+}
+
+table {
+    margin-top: 20px;
+    -webkit-box-shadow: 0 0 15px #666;
+    box-shadow: 0 0 10px #666;
+}
+
+#tracking {
+    width: 60% !important;
+    padding-left: 20px;
+}
+
+table tr:hover {
+    background: #eee;
 }
 
