@@ -98,7 +98,7 @@ class DatetimesController < ApplicationController
     @datetime.destroy
 
     respond_to do |format|
-      format.html { redirect_to(datetimes_url) }
+      format.html { redirect_to request.env['HTTP_REFERER'] }
       format.xml  { head :ok }
     end
   end
