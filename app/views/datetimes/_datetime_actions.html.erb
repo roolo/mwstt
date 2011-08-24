@@ -1,0 +1,6 @@
+<% link_id = 'set_ctt_'+datetime.id.to_s %>
+<% unless datetime.in_ctt == true then %>
+  <%= render :partial => 'datetimes/datetime_actions_in_ctt', :locals => {:datetime=>datetime, :link_id => link_id} %>
+<% else %>
+  <%= render :partial => 'datetimes/datetime_actions_not_in_ctt', :locals => {:datetime=>datetime, :link_id => link_id} %>
+<% end %>

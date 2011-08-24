@@ -1,4 +1,4 @@
-<tr<%= ' class=in_ctt' if datetime.in_ctt == true %>>
+<tr<%= ' class=in_ctt' if datetime.in_ctt == true %> id="datetime_<%=datetime.id%>">
   <td>
     <% if datetime.activity.nil? %>
         &nbsp;
@@ -35,11 +35,7 @@
   <td><%= datetime.tags_from(current_user) %></td>
 
   <td class="action">
-    <% unless datetime.in_ctt == true then %>
-        <%= link_to link_to image_tag('icons/iconset/'+current_user.icon_set+'/in_ctt.png', :alt => t('datetimes.ctt.in'), :title => t('datetimes.ctt.title.in_yes') ), datetime_in_ctt_url(datetime) %>
-  <% else %>
-        <%= link_to link_to image_tag('icons/iconset/'+current_user.icon_set+'/not_in_ctt.png', :alt => t('datetimes.ctt.not_in'), :title => t('datetimes.ctt.title.in_no')), datetime_not_in_ctt_url(datetime), :confirm => t('default.actions.confirmation') %>
-    <% end %>
+    <%= render :partial => "datetimes/datetime_actions", :locals => {:datetime => datetime} %>
   </td>
   <%= render :partial => 'default/actions', :locals=>{:object => datetime}%>
 </tr>
