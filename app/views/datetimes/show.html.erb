@@ -18,7 +18,7 @@
 
 <p>
   <b><%= Datetime.human_attribute_name 'description' %>:</b>
-  <%= simple_format @datetime.description %>
+  <%= markdownify @datetime.description %>
 </p>
 
 <p>
