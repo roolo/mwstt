@@ -77,6 +77,8 @@ cs:
       back:  Zpět
       edit:  Editovat
       show:  Zobrazit
+    form:
+      markdown_enabled_field:  Toto pole podporuje Markdown
   next: následující
   previous: předchozí
   projects:
