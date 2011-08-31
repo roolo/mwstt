@@ -98,7 +98,7 @@ class DatetimesController < ApplicationController
     @datetime.destroy
 
     respond_to do |format|
-      format.html { redirect_to(datetimes_url) }
+      format.html { redirect_to request.env['HTTP_REFERER'] }
       format.xml  { head :ok }
     end
   end
@@ -112,8 +112,16 @@ class DatetimesController < ApplicationController
     )
     datetime.in_ctt = true
 
-    if datetime.save
-      redirect_to request.env['HTTP_REFERER']
+    respond_to do |format|
+      if datetime.save
+        format.html { redirect_to request.env['HTTP_REFERER'] }
+        format.js {
+          render :update do |page|
+            page.replace 'set_ctt_'+datetime.id.to_s, :partial => 'datetime_actions', :locals => {:datetime => datetime}
+            page.Element.addClassName("datetime_"+datetime.id.to_s, 'in_ctt')
+          end
+        }
+      end
     end
 
   end
@@ -127,8 +135,16 @@ class DatetimesController < ApplicationController
     )
     datetime.in_ctt = false
     
-    if datetime.save
-      redirect_to request.env['HTTP_REFERER']
+    respond_to do |format|
+      if datetime.save
+        format.html { redirect_to request.env['HTTP_REFERER'] }
+        format.js {
+          render :update do |page|
+            page.replace 'set_ctt_'+datetime.id.to_s, :partial => 'datetime_actions', :locals => {:datetime => datetime}
+            page.Element.removeClassName("datetime_"+datetime.id.to_s, 'in_ctt')
+          end
+        }
+      end
     end
 
   end

@@ -45,4 +45,8 @@ module ApplicationHelper
   end
 
   alias_method_chain :will_paginate, :i18n
+  
+  def markdownify text
+    raw Redcarpet::Markdown.new(text).to_html
+  end
 end
