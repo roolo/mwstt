@@ -5,7 +5,7 @@
 		<% if @start_stop_action == TodayController::DATETIME_START_ACTION_CODE %>
             <%= text_field :new_tracking_info, :activity_name, :size => 60, :value => params[:activity_name] %>
             <%= text_field :new_tracking_info, :datetime_params, :value => params[:datetime_params] %>
-            <% javascript_tag do %>
+            <%= javascript_tag do %>
                 document.observe("dom:loaded", function() {
                     new Ajax.Autocompleter(
                         'new_tracking_info_activity_name',
@@ -17,6 +17,10 @@
             <div id="activity-name-suggestion" class="autocomplete"></div>
 		<% else %>
             <span id="activity-spent-time"><%= @activity_spent %></span> - <%= @activity_name %>
+            <%= javascript_tag do %>
+                initSpentTime('<%= @activity_spent %>');
+                spentTimeElementUpdateInterval = setInterval('updateCurrentSpentTimeElement()', 60000);
+            <% end %>
 		<% end %>
 	<% end %>
 <% end %>
