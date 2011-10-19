@@ -1,0 +1,7 @@
+link_id = 'set_ctt_'+datetime.id.to_s
+update_page do |page|
+  page.replace_html link_id, 
+                    render( :partial => 'datetimes/datetime_actions', 
+                            :locals => {:datetime=>datetime, :link_id => link_id}
+                    )
+end
