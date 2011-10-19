@@ -39,18 +39,16 @@ h2 {
 	width:	65%;
 	display:	inline;
 	float:		left;
-    width: 60% !important;
     padding-left: 20px;
     
-    .page-part {
+    &.page-part {
        margin: none !important;
     }
     
-    .maximized {
+    &.maximized {
     	width:	100%;
     }
 }
-
 
 #sidebar {
 	width:	30%;
@@ -301,6 +299,18 @@ div#application_nav {
 
 div#tag-cloud-tags {
     border: 1px solid #999 !important;
+}
+
+#sidebar-toggle-box {
+    float:      left;
+    padding:    {
+        left:   8px;
+        right:   8px;
+    }    
+}
+
+#sidebar-toggle-box input:parent  {
+    background: #C0C0C0;    
 }
 
 

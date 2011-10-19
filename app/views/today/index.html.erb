@@ -3,7 +3,15 @@
 <div id="page-content">
 	<div id="tracking" class="page-part">
 		<h2><%= t('.started_activities') %></h2>
-		<button onclick="javascript:$('sidebar').toggle();$('tracking').toggleClassName('maximized');"><%= t('.toggle_sidebar') %></button>
+		<div id="sidebar-toggle-box">
+  		<input  id="sidebar-toggle" 
+  		        type="checkbox" 
+  		        onchange="javascript:$('sidebar').toggle();$('tracking').toggleClassName('maximized');"
+  		        checked="checked"
+      >
+  		<label for="sidebar-toggle"><%= t('.toggle_sidebar') %></label>
+		</div>
+		<br />
 		<table id="records-view">
 			<thead>
 				<tr>
