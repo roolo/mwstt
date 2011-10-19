@@ -9,7 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'acts-as-taggable-on'
 gem 'authlogic'
 gem 'will_paginate'
-#gem 'sass'
+gem 'sass'
 gem 'redcarpet'
 
 # Use unicorn as the web server

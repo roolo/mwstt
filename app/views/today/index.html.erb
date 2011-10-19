@@ -4,7 +4,7 @@
 	<div id="tracking" class="page-part">
 		<h2><%= t('.started_activities') %></h2>
 		<button onclick="javascript:$('sidebar').toggle();$('tracking').toggleClassName('maximized');"><%= t('.toggle_sidebar') %></button>
-		<table>
+		<table id="records-view">
 			<thead>
 				<tr>
 					<th><%= Datetime.human_attribute_name 'activity' %></th>

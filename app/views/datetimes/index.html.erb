@@ -1,7 +1,7 @@
 <h1><%= t('.title') %></h1>
 
 <%= will_paginate @datetimes %>
-<table>
+<table id="records-view">
   <tr>
     <th><%= Datetime.human_attribute_name 'activity' %></th>
 	<th><%= Datetime.human_attribute_name 'start' %></th>

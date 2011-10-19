@@ -1,6 +1,6 @@
 <h1><%= t('.title') %></h1>
 
-<table>
+<table id="records-view">
   <tr>
     <th><%= Project.human_attribute_name 'name' %></th>
     <th><%= Project.human_attribute_name 'description' %></th>
@@ -9,7 +9,7 @@
   </tr>
 
 <% @projects.each do |project| %>
-  <tr>
+  <tr class="<%= cycle(:odd, :even) %>">
     <td><%= project.name %></td>
     <td><%= project.description %></td>
     <td><%= project.project %></td>

@@ -1,4 +1,4 @@
-<tr<%= ' class=in_ctt' if datetime.in_ctt == true %> id="datetime_<%=datetime.id%>">
+<tr class="<%=(datetime.in_ctt)?'in_ctt':'not_in_ctt'%> <%= cycle(:odd, :even) %>" id="datetime_<%=datetime.id%>">
   <td>
     <% if datetime.activity.nil? %>
         &nbsp;

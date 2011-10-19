@@ -1,5 +1,5 @@
 <h1><%= t('.title') %></h1>
-<table>
+<table id="records-view">
 	<thead>
 		<tr>
 			<th><%= t('tags.tag') %></th>
@@ -8,7 +8,7 @@
 	</thead>
 	<tbody>
 <% @tags.each do |tag| %>
-  <tr>
+  <tr class="<%= cycle(:odd, :even) %>">
     <td><%= tag.name %></td>
     <td><a href="/tags/show/<%= tag.id %>"><%= t('default.actions.show') %></a></td>
     <td><a href="/tags/destroy/<%= tag.id %>"><%= t('default.actions.destroy') %></a></td>
