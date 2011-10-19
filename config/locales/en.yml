@@ -75,6 +75,8 @@ en:
       back:  Back
       edit:  Edit
       show:  Show
+    form:
+      markdown_enabled_field:  This field supports Markdown
 
   next: následující
   previous: předchozí
@@ -95,7 +97,7 @@ en:
       tracked_activity: Tracked activity
     index:
       started_activities: Today started activities
-      title:  Dnes
+      title:  Today
       toggle_sidebar: Toggle sidebar
     tag_cloud:
       tags: Tags
