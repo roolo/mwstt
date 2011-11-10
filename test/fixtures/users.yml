@@ -1,0 +1,9 @@
+testing_user:
+    username: test
+    email: test@rooland.cz
+    crypted_password: 2648d5daa2740d752e77b17c081e0e032a96f82fc23cdd77a477d2536fcc9678e8d87acbf38c43c3b110f5f1755177147978a9678b2c4da825de508affe935bd
+    password_salt: QEwIqHR7YXcO74GXKgzz
+    persistence_token: b81261849110af89051cf3c9b33b0e02effb8e0a40ac2ea6e47639b758d863cd71805e0ff483c14e6b12cff632afc8757f9be7096b65c63af57be7807562b724
+    locale: 'czech_locale'
+    icon_set: "nuvola"
+    timezone: "Prague"

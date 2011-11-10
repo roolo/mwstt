@@ -41,8 +41,8 @@ class ApplicationController < ActionController::Base
   
   def set_locale
     # if params[:locale] is nil then I18n.default_locale will be used
-    unless current_user.nil?
-      I18n.locale = Locale.find(current_user.locales_id).locale_code
+    unless current_user.nil? #|| current_user.locale.nil?
+      I18n.locale = current_user.locale.locale_code
     end
   end
 

@@ -15,7 +15,7 @@
         <%= User.human_attribute_name 'language' %>:
     </th>
     <td>
-    	<%= Locale.find(@user.locales_id).name %>
+    	<%= current_user.locale.name %>
     </td>
 </tr>
 </table>
