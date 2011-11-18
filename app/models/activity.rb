@@ -1,6 +1,7 @@
 class Activity < ActiveRecord::Base
   has_many  :datetimes
   belongs_to :project
+  belongs_to :user
 
   def to_s
     name
