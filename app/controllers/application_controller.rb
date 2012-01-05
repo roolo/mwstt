@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
   def rescue_action_in_public(exception)
     case exception
     when ActiveRecord::RecordNotFound, ActionController::UnknownAction, ActionController::RoutingError
-      render :file => "#{RAILS_ROOT}/public/404.html", :layout => 'layouts/application', :status => 404
+      render :file => "#{Rails.root.to_s}/public/404.html", :layout => 'layouts/application', :status => 404
     else
       super
     end
