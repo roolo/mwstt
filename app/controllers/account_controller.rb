@@ -27,7 +27,7 @@ class AccountController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(root_path, :notice => 'Datetime was successfully created.') }
+        format.html { redirect_to(root_path, :notice => 'Registration was successful.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
