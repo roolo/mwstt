@@ -1,34 +1,34 @@
 <h1><%= t('.title') %></h1>
 <%= render 'start_stop_form' %>
 <div id="page-content">
-	<div id="tracking" class="page-part">
-		<h2><%= t('.started_activities') %></h2>
-		<div id="sidebar-toggle-box">
-  		<input  id="sidebar-toggle" 
-  		        type="checkbox" 
-  		        onchange="javascript:$('sidebar').toggle();$('tracking').toggleClassName('maximized');"
-  		        checked="checked"
+    <div id="tracking" class="page-part">
+        <h2><%= t('.started_activities') %></h2>
+        <div id="sidebar-toggle-box">
+        <input  id="sidebar-toggle" 
+                type="checkbox" 
+                onchange="javascript:$('sidebar').toggle();$('tracking').toggleClassName('maximized');"
+                checked="checked"
       >
-  		<label for="sidebar-toggle"><%= t('.toggle_sidebar') %></label>
-		</div>
-		<br />
-		<table id="records-view">
-			<thead>
-				<tr>
-					<th><%= Datetime.human_attribute_name 'activity' %></th>
-					<th><%= Datetime.human_attribute_name 'start' %></th>
-					<th><%= Datetime.human_attribute_name 'stop' %></th>
-					<th><%= Datetime.human_attribute_name 'spent_time' %></th>
-					<th><%= Datetime.human_attribute_name 'tags' %></th>
-					<th colspan="4"><%= t('default.actions.actions') %></th>
-				</tr>
-			</thead>
-			<tbody>
-			<%= render(@datetimes, :locals => {:datetime_format => @datetime_format}) %>
-			</tbody>
-		</table>
-	</div>
-	<div id="sidebar" class="page-part">
-		<%= render 'tag_cloud' %>
-	</div>
+        <label for="sidebar-toggle"><%= t('.toggle_sidebar') %></label>
+        </div>
+        <br />
+        <table id="records-view">
+            <thead>
+                <tr>
+                    <th><%= Datetime.human_attribute_name 'activity' %></th>
+                    <th><%= Datetime.human_attribute_name 'start' %></th>
+                    <th><%= Datetime.human_attribute_name 'stop' %></th>
+                    <th><%= Datetime.human_attribute_name 'spent_time' %></th>
+                    <th><%= Datetime.human_attribute_name 'tags' %></th>
+                    <th colspan="4"><%= t('default.actions.actions') %></th>
+                </tr>
+            </thead>
+            <tbody>
+            <%= render(@datetimes, :locals => {:datetime_format => @datetime_format}) %>
+            </tbody>
+        </table>
+    </div>
+    <div id="sidebar" class="page-part">
+        <%= render 'tag_cloud' %>
+    </div>
 </div>

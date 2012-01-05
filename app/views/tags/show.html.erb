@@ -1,20 +1,20 @@
 <h1><%= t('tags.tag') %>: <%= @tag['name'] %></h1>
 <h2><%= t('.datetimes_activities') %></h2>
 <table>
-	<thead>
-		<tr>
+    <thead>
+        <tr>
             <th><%= Datetime.human_attribute_name 'activity' %></th>
             <th><%= Datetime.human_attribute_name 'start' %></th>
             <th><%= Datetime.human_attribute_name 'stop' %></th>
             <th><%= Datetime.human_attribute_name 'spent_time' %></th>
             <th><%= Datetime.human_attribute_name 'tags' %></th>
 
-			<th colspan="4"><%= t('default.actions.actions') %></th>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render @datetimes %>
-	</tbody>
+            <th colspan="4"><%= t('default.actions.actions') %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= render @datetimes %>
+    </tbody>
 </table>
 <p>
   <%= link_to t('tags.index.title'), tags_path %>

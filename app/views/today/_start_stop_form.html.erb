@@ -1,8 +1,8 @@
 <%= form_tag :action => @start_stop_action do %>
     <%= field_set_tag t('.activity_tracking') do %>
-		<button type="submit" name="<%= @start_stop_action %>"><%= @start_stop_action.capitalize %></button>
-		<strong><%= t('.tracked_activity') %>:</strong>
-		<% if @start_stop_action == TodayController::DATETIME_START_ACTION_CODE %>
+        <button type="submit" name="<%= @start_stop_action %>"><%= @start_stop_action.capitalize %></button>
+        <strong><%= t('.tracked_activity') %>:</strong>
+        <% if @start_stop_action == TodayController::DATETIME_START_ACTION_CODE %>
             <%= text_field :new_tracking_info, :activity_name, :size => 60, :value => params[:activity_name] %>
             <%= text_field :new_tracking_info, :datetime_params, :value => params[:datetime_params] %>
             <%= javascript_tag do %>
@@ -15,12 +15,12 @@
                 })
             <% end %>
             <div id="activity-name-suggestion" class="autocomplete"></div>
-		<% else %>
+        <% else %>
             <span id="activity-spent-time"><%= @activity_spent %></span> - <%= @activity_name %>
             <%= javascript_tag do %>
                 initSpentTime('<%= @activity_spent %>');
                 spentTimeElementUpdateInterval = setInterval('updateCurrentSpentTimeElement()', 60000);
             <% end %>
-		<% end %>
-	<% end %>
+        <% end %>
+    <% end %>
 <% end %>

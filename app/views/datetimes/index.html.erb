@@ -4,11 +4,11 @@
 <table id="records-view">
   <tr>
     <th><%= Datetime.human_attribute_name 'activity' %></th>
-	<th><%= Datetime.human_attribute_name 'start' %></th>
-	<th><%= Datetime.human_attribute_name 'stop' %></th>
-	<th><%= Datetime.human_attribute_name 'spent_time' %></th>
-	<th><%= Datetime.human_attribute_name 'tags' %></th>
-	<th colspan="4"><%= t('default.actions.actions') %></th>
+    <th><%= Datetime.human_attribute_name 'start' %></th>
+    <th><%= Datetime.human_attribute_name 'stop' %></th>
+    <th><%= Datetime.human_attribute_name 'spent_time' %></th>
+    <th><%= Datetime.human_attribute_name 'tags' %></th>
+    <th colspan="4"><%= t('default.actions.actions') %></th>
   </tr>
 
 <% @datetimes.each do |datetime| %>

@@ -1,12 +1,12 @@
 <h1><%= t('.title') %></h1>
 <table id="records-view">
-	<thead>
-		<tr>
-			<th><%= t('tags.tag') %></th>
-			<th colspan="2"><%= t('default.actions.actions') %></th>
-		</tr>
-	</thead>
-	<tbody>
+    <thead>
+        <tr>
+            <th><%= t('tags.tag') %></th>
+            <th colspan="2"><%= t('default.actions.actions') %></th>
+        </tr>
+    </thead>
+    <tbody>
 <% @tags.each do |tag| %>
   <tr class="<%= cycle(:odd, :even) %>">
     <td><%= tag.name %></td>
@@ -14,5 +14,5 @@
     <td><a href="/tags/destroy/<%= tag.id %>"><%= t('default.actions.destroy') %></a></td>
   </tr>
 <% end %>
-	</tbody>
+    </tbody>
 </table>

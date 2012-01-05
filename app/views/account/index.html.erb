@@ -2,10 +2,10 @@
 <p id="notice"><%= notice %></p>
 
 <table>
-	<tr>
+    <tr>
   <th><%= User.human_attribute_name 'username' %>:</th>
   <td><%= @user.username %></td>
-	</tr>
+    </tr>
 <tr>
   <th><%= User.human_attribute_name 'mail' %>:</th>
   <td><%= @user.email %></td>
@@ -15,7 +15,7 @@
         <%= User.human_attribute_name 'language' %>:
     </th>
     <td>
-    	<%= current_user.locale.name %>
+        <%= current_user.locale.name %>
     </td>
 </tr>
 </table>
