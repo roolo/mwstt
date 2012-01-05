@@ -2,11 +2,15 @@
 
 class PopulateLocales < ActiveRecord::Migration
   def self.up
-    english = Locale.new :name => 'English', :locale_code => 'en'
-    english.save
+    say_with_time("Creating english locale") do
+      english = Locale.new :name => 'English', :locale_code => 'en'
+      english.save
+    end
 
-    czech = Locale.new :name => 'Čeština', :locale_code => 'cs'
-    czech.save
+    say_with_time("Creating english locale") do
+      czech = Locale.new :name => 'Čeština', :locale_code => 'cs'
+      czech.save
+    end
   end
 
   def self.down
