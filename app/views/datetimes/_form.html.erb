@@ -20,7 +20,7 @@
     <%= f.label :start %><br />
     <%= f.datetime_select :start %>
   </div>
-  <% unless @datetime.stop.nil? %>
+  <% unless @datetime.stop? %>
   <div class="field">
     <%= f.label :stop %><br />
     <%= f.datetime_select :stop %>
