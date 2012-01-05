@@ -18,7 +18,7 @@
 
 <p>
   <b><%= Datetime.human_attribute_name 'description' %>:</b>
-  <%= markdownify @datetime.description %>
+  <%= markdownify @datetime.description unless @datetime.description.nil? %>
 </p>
 
 <p>

@@ -1,11 +1,18 @@
 # Handles projects maintenace
 class ProjectsController < ApplicationController
   before_filter :require_user
+  before_filter :work_with_users_project_before, :except => [:index, :new, :create]
+
+  def work_with_users_project_before
+    @project = Project.find params[:id],
+                            :conditions => ["user_id = ?", current_user],
+                            :include => {:activities => :datetimes},
+                            :order => "projects.name ASC"
+  end
 
   # Serves listing of existing projects
   def index
     @projects = Project.all_owned_by current_user
-
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,14 +22,6 @@ class ProjectsController < ApplicationController
 
   # Serves details about particular project
   def show
-    @project = Project.find params[:id],
-                            :conditions => [
-                              "datetimes.user_id = ?",
-                              current_user
-                            ],
-                            :include => {:activities => :datetimes},
-                            :order => "projects.name ASC"
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @project }
@@ -41,19 +40,12 @@ class ProjectsController < ApplicationController
 
   # Serves editation of particular project
   def edit
-    @project = Project.find params[:id],
-                            :conditions => [
-                              "datetimes.user_id = ?",
-                              current_user
-                            ],
-                            :include => {:activities => :datetimes},
-                            :order => "projects.name ASC"
-
   end
 
   # Handles creation of project
   def create
     @project = Project.new(params[:project])
+    @project.user = current_user
 
     respond_to do |format|
       if @project.save
@@ -68,15 +60,6 @@ class ProjectsController < ApplicationController
 
   # Handles modification of project
   def update
-    @project = Project.find params[:id],
-                            :conditions => [
-                              "datetimes.user_id = ?",
-                              current_user
-                            ],
-                            :include => {:activities => :datetimes},
-                            :order => "projects.name ASC"
-
-
     respond_to do |format|
       if @project.update_attributes(params[:project])
         format.html { redirect_to(@project, :notice => 'Project was successfully updated.') }
@@ -90,14 +73,6 @@ class ProjectsController < ApplicationController
 
   # Handles destroing of project
   def destroy
-    @project = Project.find params[:id],
-                            :conditions => [
-                              "datetimes.user_id = ?",
-                              current_user
-                            ],
-                            :include => {:activities => :datetimes},
-                            :order => "projects.name ASC"
-
     @project.destroy
 
     respond_to do |format|

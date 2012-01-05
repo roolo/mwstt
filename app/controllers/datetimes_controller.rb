@@ -1,6 +1,16 @@
 # Handles datetimes maintenace
 class DatetimesController < ApplicationController
   before_filter :require_user
+  before_filter :work_with_users_datetime_before, except: [:new, :index, :create]
+
+  def work_with_users_datetime_before
+    @datetime = Datetime.find(  params[:id],
+                                :conditions => [
+                                    "datetimes.user_id = ?",
+                                    current_user
+                                ]
+    )
+  end
 
   # Serves listing of existing datetimes
   def index
@@ -19,13 +29,6 @@ class DatetimesController < ApplicationController
 
   # Serves details about particular datetime
   def show
-    @datetime = Datetime.find(  params[:id],
-                                :conditions => [
-                                    "datetimes.user_id = ?",
-                                    current_user
-                                ]
-    )
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @datetime }
@@ -44,12 +47,6 @@ class DatetimesController < ApplicationController
 
   # Serves editation of particular datetime
   def edit
-    @datetime = Datetime.find(  params[:id],
-                                :conditions => [
-                                    "datetimes.user_id = ?",
-                                    current_user
-                                ]
-    )
   end
 
   # Handles creation of datetime
@@ -69,13 +66,6 @@ class DatetimesController < ApplicationController
 
   # Handles modification of datetime
   def update
-    @datetime = Datetime.find(  params[:id],
-                                :conditions => [
-                                    "datetimes.user_id = ?",
-                                    current_user
-                                ]
-    )
-
     respond_to do |format|
       if @datetime.update_attributes(params[:datetime])
         format.html { redirect_to(@datetime, :notice => 'Datetime was successfully updated.') }
@@ -89,12 +79,6 @@ class DatetimesController < ApplicationController
 
   # Handles destroing of datetime
   def destroy
-    @datetime = Datetime.find(  params[:id],
-                                :conditions => [
-                                    "datetimes.user_id = ?",
-                                    current_user
-                                ]
-    )
     @datetime.destroy
 
     respond_to do |format|
@@ -104,44 +88,31 @@ class DatetimesController < ApplicationController
   end
 
   def set_in_ctt
-    datetime = Datetime.find(  params[:id],
-                                :conditions => [
-                                    "datetimes.user_id = ?",
-                                    current_user
-                                ]
-    )
-    datetime.in_ctt = true
+    @datetime.in_ctt = true
 
     respond_to do |format|
-      if datetime.save
+      if @datetime.save
         format.html { redirect_to request.env['HTTP_REFERER'] }
         format.js {
           render :update do |page|
-            page.replace 'set_ctt_'+datetime.id.to_s, :partial => 'datetime_actions', :locals => {:datetime => datetime}
-            page.Element.addClassName("datetime_"+datetime.id.to_s, 'in_ctt')
+            page.replace 'set_ctt_'+@datetime.id.to_s, :partial => 'datetime_actions', :locals => {:datetime => @datetime}
+            page.Element.addClassName("datetime_"+@datetime.id.to_s, 'in_ctt')
           end
         }
       end
     end
-
   end
 
   def set_not_in_ctt
-    datetime = Datetime.find(  params[:id],
-                                :conditions => [
-                                  "datetimes.user_id = ?",
-                                  current_user
-                                ]
-    )
-    datetime.in_ctt = false
+    @datetime.in_ctt = false
 
     respond_to do |format|
-      if datetime.save
+      if @datetime.save
         format.html { redirect_to request.env['HTTP_REFERER'] }
         format.js {
           render :update do |page|
-            page.replace 'set_ctt_'+datetime.id.to_s, :partial => 'datetime_actions', :locals => {:datetime => datetime}
-            page.Element.removeClassName("datetime_"+datetime.id.to_s, 'in_ctt')
+            page.replace 'set_ctt_'+@datetime.id.to_s, :partial => 'datetime_actions', :locals => {:datetime => @datetime}
+            page.Element.removeClassName("datetime_"+@datetime.id.to_s, 'in_ctt')
           end
         }
       end

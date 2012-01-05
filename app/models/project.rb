@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
   belongs_to :project
+  belongs_to :user
   has_many  :activities
+  accepts_nested_attributes_for :user
 
   def to_s
     name
@@ -8,9 +10,9 @@ class Project < ActiveRecord::Base
 
   def self.all_owned_by user
     self.all  :conditions => [
-                "datetimes.user_id = ?",
-                user
-              ],
+      "user_id = ?",
+      user
+    ],
               :include => {:activities => :datetimes},
               :order => "projects.name ASC"
   end

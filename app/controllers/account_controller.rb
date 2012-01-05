@@ -1,10 +1,13 @@
 class AccountController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:index, :update, :edit]
+  before_filter :instantize_current_user_before, only: [:index, :edit, :update]
+
+  def instantize_current_user_before
+    @user = current_user
+  end
 
   def index
-    @user = current_user
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
@@ -38,7 +41,6 @@ class AccountController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = current_user
     @form_action = 'create'
 
 
@@ -51,8 +53,6 @@ class AccountController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = current_user
-
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = t('Account was successfully updated.')
