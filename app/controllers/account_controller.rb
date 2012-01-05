@@ -2,9 +2,14 @@ class AccountController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:index, :update, :edit]
   before_filter :instantize_current_user_before, only: [:index, :edit, :update]
+  before_filter :account_form_before, only: [:edit, :new]
 
   def instantize_current_user_before
     @user = current_user
+  end
+
+  def account_form_before
+    @locales = Locale.all(:order => "name ASC")
   end
 
   def index

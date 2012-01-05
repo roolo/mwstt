@@ -25,7 +25,7 @@
         <%= f.label :locales_id %>:
     </th>
     <td>
-        <%= collection_select :user, :locale_id, Locale.all(:order => "name ASC"), :id, :name %>
+        <%= collection_select :user, :locale_id, @locales, :id, :name %>
     </td>
   </tr>
   <tr>
