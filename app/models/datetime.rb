@@ -28,6 +28,10 @@ class Datetime < ActiveRecord::Base
     else
       raise Exceptions::ActivityAlreadyBelongsToProject unless project_name.nil?
     end
+    
+    # Saving an ownership
+    joined_activity.user = creator
+    joined_activity.save
 
     new_datetime = self.new
     creator.tag(new_datetime, :with => datetime_tags, :on => 'tags')
