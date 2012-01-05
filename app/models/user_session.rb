@@ -1,6 +1,6 @@
 class UserSession < Authlogic::Session::Base
-  include ActiveModel::Conversion 
-  def persisted? 
-    false 
-  end 
+  include ActiveModel::Conversion
+  def persisted?
+    false
+  end
 end

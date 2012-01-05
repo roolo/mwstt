@@ -1,7 +1,7 @@
 # Handles datetimes maintenace
 class DatetimesController < ApplicationController
   before_filter :require_user
-  
+
   # Serves listing of existing datetimes
   def index
     @datetimes = Datetime.find_all_by_user_id(  current_user,
@@ -16,7 +16,7 @@ class DatetimesController < ApplicationController
       format.xml  { render :xml => @datetimes }
     end
   end
-  
+
   # Serves details about particular datetime
   def show
     @datetime = Datetime.find(  params[:id],
@@ -31,7 +31,7 @@ class DatetimesController < ApplicationController
       format.xml  { render :xml => @datetime }
     end
   end
-  
+
   # Serves creation of new datetime
   def new
     @datetime = Datetime.new
@@ -41,7 +41,7 @@ class DatetimesController < ApplicationController
       format.xml  { render :xml => @datetime }
     end
   end
-  
+
   # Serves editation of particular datetime
   def edit
     @datetime = Datetime.find(  params[:id],
@@ -66,7 +66,7 @@ class DatetimesController < ApplicationController
       end
     end
   end
-  
+
   # Handles modification of datetime
   def update
     @datetime = Datetime.find(  params[:id],
@@ -134,7 +134,7 @@ class DatetimesController < ApplicationController
                                 ]
     )
     datetime.in_ctt = false
-    
+
     respond_to do |format|
       if datetime.save
         format.html { redirect_to request.env['HTTP_REFERER'] }

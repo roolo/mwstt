@@ -1,7 +1,7 @@
 # Handles activities maintenace
 class ActivitiesController < ApplicationController
   before_filter :require_user
-  
+
   # Serves listing of existing activities
   def index
     @activities = Activity.all_owned_by current_user

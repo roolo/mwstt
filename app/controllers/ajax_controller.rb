@@ -5,7 +5,7 @@ class AjaxController < ApplicationController
   def activities_contains
     @activities = Activity.all(
       :conditions => [
-        'name LIKE ? AND datetimes.user_id = ?', 
+        'name LIKE ? AND datetimes.user_id = ?',
         '%'+params[:new_tracking_info][:activity_name]+'%',
         current_user.id
       ],

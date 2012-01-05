@@ -3,11 +3,11 @@ class ForeignKeyColumnNameFix < ActiveRecord::Migration
     change_table :datetimes do |t|
       t.references  :activity
     end
-    
+
     Datetime.update_all ["activity_id = activities_id"]
   end
 
   def self.down
-    remove_column :datetimes, :activity_id 
+    remove_column :datetimes, :activity_id
   end
 end

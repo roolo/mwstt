@@ -4,7 +4,7 @@ class PerUserLocale < ActiveRecord::Migration
       nt.string :name
       nt.string :locale_code
     end
-    
+
     change_table  :users do |ct|
       ct.references :locales
     end

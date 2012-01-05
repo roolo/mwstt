@@ -8,7 +8,7 @@ MwsttFs::Application.routes.draw do
 
   match 'today/start' => 'today#start'
   match 'today/stop' => 'today#stop'
-  
+
   resources :activities
   resources :projects
   resources :users
@@ -19,11 +19,11 @@ MwsttFs::Application.routes.draw do
   match 'datetimes/:id/in_ctt' => 'datetimes#set_in_ctt', :as => :datetime_in_ctt
   match 'datetimes/:id/not_in_ctt' => 'datetimes#set_not_in_ctt', :as => :datetime_not_in_ctt
   resources :datetimes
-  
+
   match "login" => "user_sessions#new"
   match "user_sessions" => "user_sessions#create"
   match "logout", :controller => "user_sessions", :action => "destroy"
-  
+
   match "account" => "account#index"
   match "registration" => "account#new"
   match "account/create" => "account#create"

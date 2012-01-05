@@ -30,7 +30,7 @@ class TagsController < ApplicationController
           )
         '
     )
-    
+
     redirect_to(tags_path, :notice => 'Tag was successfully destroyed.')
   end
 

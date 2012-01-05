@@ -9,14 +9,14 @@
     </ul>
   </div>
   <% end %>
-  
+
   <% if flash[:notice] %>
   <div id="info">
       <span id="notice"><%= flash[:notice] %></span>
       <%= javascript_tag visual_effect :highlight, 'notice' %>
   </div>
   <% end %>
-  
+
   <div id="user_nav">
     <% if current_user.nil? %>
       <%= link_to t(".register"), :controller => 'account', :action => 'new' %> |

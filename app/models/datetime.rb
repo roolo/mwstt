@@ -1,13 +1,13 @@
 class Datetime < ActiveRecord::Base
   acts_as_taggable
-  
+
   belongs_to  :activity
-  
+
   belongs_to  :user
 
   cattr_reader :per_page
   @@per_page = 15
-  
+
   # Starts new datetime linked to activity given by name
   #
   # @param [String] activity_name Name of activity which should be datetime linked to
@@ -21,14 +21,14 @@ class Datetime < ActiveRecord::Base
 
     joined_activity = Activity.find_or_create_by_name new_tracking[:activity_name]
     desired_project = Project.find_or_create_by_name( project_name )
-    
+
     if joined_activity.project.nil?
       joined_activity.project = desired_project
       joined_activity.save
     else
       raise Exceptions::ActivityAlreadyBelongsToProject unless project_name.nil?
     end
-    
+
     # Saving an ownership
     joined_activity.user = creator
     joined_activity.save
@@ -43,11 +43,11 @@ class Datetime < ActiveRecord::Base
 
     new_datetime
   end
-  
+
   # Returns datetime which is not finished
-  # 
+  #
   # @param [User] current_user User to which should the opened datetime belongs to
-  # 
+  #
   # @return [Datetime]
   def self.get_opened_one current_user
     return current_user.datetimes.find_by_stop nil

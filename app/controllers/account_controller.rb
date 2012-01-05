@@ -1,7 +1,7 @@
 class AccountController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:index, :update, :edit]
-  
+
   def index
     @user = current_user
 
@@ -10,7 +10,7 @@ class AccountController < ApplicationController
       format.xml  { render :xml => @user }
     end
   end
-  
+
   def new
     @user = User.new
     @form_action = 'create'
@@ -20,7 +20,7 @@ class AccountController < ApplicationController
       format.xml  { render :xml => @user }
     end
   end
-  
+
   # Handles creation of user - Registration
   def create
     @user = User.new(params[:user])
@@ -35,19 +35,19 @@ class AccountController < ApplicationController
       end
     end
   end
-  
+
   # GET /users/1/edit
   def edit
     @user = current_user
     @form_action = 'create'
 
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
     end
   end
-  
+
   # PUT /users/1
   # PUT /users/1.xml
   def update
