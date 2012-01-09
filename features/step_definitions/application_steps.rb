@@ -9,5 +9,4 @@ end
 
 Then /^I should see "([^"]*)"$/ do |text|
   page.should have_content(text)
-  embed_screenshot("screenshot-#{Time.new.to_i}")
 end
