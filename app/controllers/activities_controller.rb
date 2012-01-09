@@ -1,6 +1,17 @@
 # Handles activities maintenace
 class ActivitiesController < ApplicationController
   before_filter :require_user
+  before_filter :work_with_users_activity_before, :except => [:index, :new, :create]
+
+  def work_with_users_activity_before
+    @activity = Activity.find(  params[:id],
+                                :include => [:datetimes],
+                                :conditions => [
+                                  "user_id = ?",
+                                  current_user
+                                ]
+    )
+  end
 
   # Serves listing of existing activities
   def index
@@ -14,14 +25,6 @@ class ActivitiesController < ApplicationController
 
   # Serves details about particular activity
   def show
-    @activity = Activity.find(  params[:id],
-                                :include => [:datetimes],
-                                :conditions => [
-                                    "datetimes.user_id = ?",
-                                    current_user
-                                ]
-    )
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @activity }
@@ -40,19 +43,15 @@ class ActivitiesController < ApplicationController
 
   # Serves editation of particular activity
   def edit
-    @activity = Activity.find(  params[:id],
-                                :include => [:datetimes],
-                                :conditions => [
-                                    "datetimes.user_id = ?",
-                                    current_user
-                                ]
-    )
   end
 
   # Handles creation of activity
   def create
     @activity = Activity.new(params[:activity])
-
+    @activity.user = current_user
+    
+    
+    
     respond_to do |format|
       if @activity.save
         format.html { redirect_to(@activity, :notice => 'Activity was successfully created.') }
@@ -66,14 +65,6 @@ class ActivitiesController < ApplicationController
 
   # Handles modification of activity
   def update
-    @activity = Activity.find(  params[:id],
-                                :include => [:datetimes],
-                                :conditions => [
-                                    "datetimes.user_id = ?",
-                                    current_user
-                                ]
-    )
-
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
         format.html { redirect_to(@activity, :notice => 'Activity was successfully updated.') }

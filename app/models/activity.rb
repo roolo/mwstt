@@ -2,6 +2,8 @@ class Activity < ActiveRecord::Base
   has_many  :datetimes
   belongs_to :project
   belongs_to :user
+  accepts_nested_attributes_for :user
+  
 
   def to_s
     name
