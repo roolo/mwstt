@@ -63,7 +63,7 @@ en:
         in_no: No, this is item is not yet written to central time tracker
     index:
       new: New Datetime
-      title: Datetime list
+      title: Datetimes list
     navigation:
 
   default:
