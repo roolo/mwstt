@@ -3,7 +3,7 @@ class Activity < ActiveRecord::Base
   belongs_to :project
   belongs_to :user
   accepts_nested_attributes_for :user
-  
+  validates_presence_of :name
 
   def to_s
     name
