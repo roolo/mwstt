@@ -60,7 +60,7 @@ class AccountController < ApplicationController
   def update
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = t('Account was successfully updated.')
+        flash[:notice] = t 'account.edit.notice.success'
         format.html { redirect_to :controller=>'account' }
         format.xml  { head :ok }
       else
