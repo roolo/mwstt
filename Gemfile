@@ -31,7 +31,7 @@ group :test do
   gem 'cucumber-rails', '1.2.1'
   gem 'rspec-rails', '2.7.0'
   gem 'database_cleaner', '0.7.0'
-  gem 'factory_girl', '2.3.2'
+  gem 'factory_girl_rails'
 end
 
 # Bundle gems for the local environment. Make sure to

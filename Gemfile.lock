@@ -59,6 +59,9 @@ GEM
       abstract (>= 1.0.0)
     factory_girl (2.3.2)
       activesupport
+    factory_girl_rails (1.4.0)
+      factory_girl (~> 2.3.0)
+      railties (>= 3.0.0)
     ffi (1.0.11)
     gherkin (2.7.2)
       json (>= 1.4.6)
@@ -130,7 +133,7 @@ DEPENDENCIES
   authlogic
   cucumber-rails (= 1.2.1)
   database_cleaner (= 0.7.0)
-  factory_girl (= 2.3.2)
+  factory_girl_rails
   rails (= 3.0.1)
   redcarpet
   rspec-rails (= 2.7.0)
