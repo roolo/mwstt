@@ -21,3 +21,10 @@ When /^I fill datetime form$/ do
     click_button 'datetime_submit'
   end
 end
+
+Then /^I should see complete datetime form$/ do
+  page.should have_css('label:contains(Activity)')
+  page.should have_css('label:contains(Start)')
+  page.should have_css('label:contains(Stop)')
+  page.should have_css('label:contains(Description)')
+end

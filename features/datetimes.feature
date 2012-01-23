@@ -14,3 +14,9 @@ Feature: Datetimes page
     When I visit the new page for the datetimes
      And I fill datetime form
     Then I should see success notice
+
+  Scenario: Edit existing datetime
+    Given a data for datetime
+    Given logged in as owner
+    When I visit the edit page for that datetime
+    Then I should see complete datetime form
