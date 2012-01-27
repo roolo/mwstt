@@ -5,6 +5,7 @@ FactoryGirl.define do
     start "2012-01-10 14:14:51"
     stop "2012-01-10 15:14:51"
     description "MyText"
+    in_ctt  false
     user
     activity
   end

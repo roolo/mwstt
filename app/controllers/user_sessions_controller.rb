@@ -8,11 +8,17 @@ class UserSessionsController < ApplicationController
 
   def create
     @user_sessions = UserSession.new(params[:user_session])
-    if @user_sessions.save
-      flash[:notice] = "Login successful!"
-      redirect_to root_path
-    else
-      render :action => :new
+    respond_to do |format|
+      if @user_sessions.save
+        format.html { 
+          flash[:notice] = "Login successful!"
+          redirect_to root_path
+        }
+        format.xml { head :ok }
+      else
+        format.html { render :action => :new }
+        format.xml { head :error }
+      end
     end
   end
 
