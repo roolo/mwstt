@@ -20,7 +20,7 @@ class Datetime < ActiveRecord::Base
     project_name = $1
 
     joined_activity = Activity.find_or_create_by_name new_tracking[:activity_name]
-    desired_project = Project.find_or_create_by_name( project_name )
+    desired_project = Project.find_or_create_by_name_and_user_id( project_name, creator )
 
     if joined_activity.project.nil?
       joined_activity.project = desired_project
