@@ -53,7 +53,10 @@ cs:
 
   date:
     month_names: [Leden, Únor, Březen, Duben, Květen, Červen, Červenec, Srpen, Září, Říjen, Listopad, Prosinec]
-    order:  [ :day, :month, :year ]
+    order:
+      - :day
+      - :month
+      - :year
   datetimes:
     ctt:
       not_in: Není v CTT
